@@ -111,12 +111,12 @@ Valime Unity, täna väga laialdaselt kasutatav, meie projekti mõõtmetes on ta
 
 ### Allikad:
 
-[Gamemaker - Commonsense](https://www.commonsense.org/education/reviews/gamemaker)
-[Gamemaker - Capterra](https://www.capterra.com/p/158594/GameMaker-Studio/reviews/)
-[Godot - Capterra](https://www.capterra.com/p/234843/Godot-Engine/reviews/)
-[Godot vs Unity - Hitberrygames](https://www.hitberrygames.com/post/godot-vs-unity-2023-which-game-engine-is-the-best-one)
-[Unreal vs Godot - Hitberrygames](https://www.hitberrygames.com/post/unreal-vs-godot-how-to-switch-a-game-engine)
-[Unity - Capterra](https://www.capterra.com/p/158591/Unity/reviews/)
-[Unreal Engine - Capterra](https://www.capterra.com/p/158599/Unreal-Engine/reviews/)
-[Unity - Gamesindustry](https://www.gamesindustry.biz/what-is-the-best-game-engine-is-unity-the-right-game-engine-for-you)
-[Unity - Pinglestudio](https://pinglestudio.com/blog/full-cycle-development/pros-and-cons-of-unity-game-engine)
+- [Gamemaker - Commonsense](https://www.commonsense.org/education/reviews/gamemaker)
+- [Gamemaker - Capterra](https://www.capterra.com/p/158594/GameMaker-Studio/reviews/)
+- [Godot - Capterra](https://www.capterra.com/p/234843/Godot-Engine/reviews/)
+- [Godot vs Unity - Hitberrygames](https://www.hitberrygames.com/post/godot-vs-unity-2023-which-game-engine-is-the-best-one)
+- [Unreal vs Godot - Hitberrygames](https://www.hitberrygames.com/post/unreal-vs-godot-how-to-switch-a-game-engine)
+- [Unity - Capterra](https://www.capterra.com/p/158591/Unity/reviews/)
+- [Unreal Engine - Capterra](https://www.capterra.com/p/158599/Unreal-Engine/reviews/)
+- [Unity - Gamesindustry](https://www.gamesindustry.biz/what-is-the-best-game-engine-is-unity-the-right-game-engine-for-you)
+- [Unity - Pinglestudio](https://pinglestudio.com/blog/full-cycle-development/pros-and-cons-of-unity-game-engine)
