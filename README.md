@@ -8,7 +8,7 @@
  - [Doris](https://github.com/TLUHK-RIF22/Team-4/issues/8) (Disainer)
  - [Pavel](https://github.com/TLUHK-RIF22/Team-4/issues/9) (Disainer)
  - [Atter](https://github.com/TLUHK-RIF22/Team-4/issues/11) (Arendaja)
- - [Jaagub](https://github.com/TLUHK-RIF22/Team-4/issues/10) (Arendaja)
+ - [Jaagup](https://github.com/TLUHK-RIF22/Team-4/issues/10) (Arendaja)
 
 
 
