@@ -3,7 +3,7 @@
 Kuidas selles projektis on Unity projekt laetud üles Githubi:
 
 1. Unitys loodi 2D mänguprojekt
-2. Vaadati üle sätted (Version Control Mode = Visible Meta FIles, Asset Serialization Mode = Force Text)
+2. Vaadati üle sätted (Version Control Mode = Visible Meta Files, Asset Serialization Mode = Force Text)
 3. Projekti kausta lisati eelloodud .gitignore fail, kuna projektifailid on liiga mahukad terves ulatuses üles laadimiseks
 4. Projekt laeti üles repositoorumisse läbi github desktopi
    
