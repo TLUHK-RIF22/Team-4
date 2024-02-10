@@ -1,3 +1,13 @@
+# Mängu taustast
+
+Mängu ideeni jõuti tiimiliikmete arutelu käigus. See on žanriliselt klassifitseeritud hariduslikuks seiklusmänguks. Põnevus on kombineeritud teadmiste andmisega lendorava 
+kohta - milline on ta elupaik, toidulaud ja kes on ta põhivaenlased – koos mõningate fantaasia elementidega. Mängu sihtgrupiks on esimese ja teise kooliastme õpilased, kuid see kõnetab ka laiemalt teisi loodushoiust huvitatud inimesi.
+
+
+Kirjanduse põhjal eelistab lendorav elupaigaks vanu kuuse haava segametsi, pesa teeb ta enamasti haava õõnsusesse Lendorava põhitoiduks on lehtpuu lehed, pungad, urvad ja koor. 
+Lendorava asurkonna säilimist mõjutavad põhitegurid on elupaikade häving ja kisklus. Teda ohustavad röövloomad nagu metsnugis, kassikakk, händkakk, kodukakk ja kanakull. Samuti on 
+leitud, et elamute lähistel võib kodukass lendorava murda. Kriitilise tähtsusega ohuks on lendoravale elupaikade kadumine ja killustumine.
+
 # Mängu kontseptsioon
 
 - Mängu nimi: Fight or Flight
