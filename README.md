@@ -6,6 +6,8 @@
  - [Projektiplaan](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/projektiplaan.md)
  - [Inspiratsioonitahvel](https://www.figma.com/file/IpFLPqvzyU88h4C5KThWLZ/Timmu?type=design&node-id=0%3A1&mode=design&t=IIVMT3EbVkWpID5m-1)
  - [mängumootori analüüs SWOT](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/SWOT.md)
+ - [Koosoleku protokollid](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/koosoleku_protokollid.md)
+ - [personad](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/Personad.md)
 
 ## Tiimi liikmed ja nende praktikapäevikud
  - [Andero](https://github.com/TLUHK-RIF22/Team-4/issues/7)  (Projektijuht, Arendaja)
