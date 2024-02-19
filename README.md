@@ -4,7 +4,7 @@
   Projekt on loodud multimeediumi praktika raames. Projekti eesmärgiks on luua õppemäng, mis on suunatud 1.-6. klassi õpilastele. Mängu nimi on "Fight or Flight" ja selle žanriks on seikluslik õppemäng. Mängu kangelaseks on lendorav Timmu, kes sai oma nime maineka lendorava uurija – Uudo Timm järgi. Mängu eesmärgiks on õpetada lastele keskkonnakaitse ja looduse olulisust. Lisaks sellele, et lendoravat peetakse Eestis looduskaitse sümboliks, on ta valitud aasta loomaks 2023. Mängu platvormiks on Windows. Pikem kirjeldus asub [siin](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/mängukirjeldus.md)
  - [Riskiplaan](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/Riskiplaan.md)
  - [Projektiplaan](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/projektiplaan.md)
- - [Inspiratsioonitahvel](https://www.figma.com/file/IpFLPqvzyU88h4C5KThWLZ/Timmu?type=design&node-id=0%3A1&mode=design&t=IIVMT3EbVkWpID5m-1)
+ - [Inspiratsioonitahvel ja Figma joonised](https://www.figma.com/file/IpFLPqvzyU88h4C5KThWLZ/Timmu?type=design&node-id=0%3A1&mode=design&t=IIVMT3EbVkWpID5m-1)
  - [Mängumootori analüüs SWOT](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/SWOT.md)
  - [Koosoleku protokollid](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/koosoleku_protokollid.md)
  - [Personad](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/Personad.md)
