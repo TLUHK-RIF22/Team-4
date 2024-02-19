@@ -1,0 +1,58 @@
+# Koosoleku protokollid
+
+---
+
+## 1. Koosolek (30. jaanuar 2024, 19:00 - 20:00)
+Osalesid: Kõik tiimist.
+
+- GitHubi projekti tutvustus Andero poolt.
+- Issue'de läbivaatamine, vastutajate määramine ja ajakava paikapanemine.
+- Töökorralduslikud reeglid ja ülesehitus.
+- Rollide jaotus.
+
+---
+
+## 2. Koosolek (6. veebruar 2024, 19:00 - 20:00)
+Osalesid: Kõik tiimist.
+
+- Ülevaade tehtud töödest.
+- Inspiratsioonitahvli ülevaade.
+- Tugivajadused ja probleemid.
+- Järgmise sprinti plaanid ja eesmärgid.
+
+---
+
+## 3. Koosolek (15. veebruar 2024, 19:00 - 21:00)
+Osalesid: Andero, Atter, Doris ja Pavel
+
+Vahepealsed arengud:
+- Inspiratsioonitahvel ja gameplay Figmasse viidud.
+- Taskid on tehtud projektid.
+- Baasliikumise koodid tehtud.
+- Lendamine pole probleem - hüppe aega ja pikkust saab määrata.
+
+### Otsused ja arutelud
+- Prototüüp: kas paberil või Figmas?
+  - Paberil - Andero tegeleb.
+- Andero jagab õppekirjandust:
+  - Fundamentals of Game Design, 3/e
+  - Unity Game Development in 24 Hours, Sams Teach Yourself, 4/e
+  - Introduction to Game Design, Prototyping, and Development
+  - Advanced Game Design
+  - Agile Game Development
+  - A Game Design Vocabulary
+  - Games, Design, and Play
+- Unitys arendamine.
+- Kuidas teha disaini atraktiivseks.
+- Koosolekul otsustasime, et teeme 2 persona.
+- Paberprototüüp - Figma - printeripõhine.
+
+Järgmiseks tunniks on vaja:
+- Prototüüp.
+- Miks on fun - personaad, gameplay.
+- Jätkame esitluste tegemist samamoodi - projektijuht on ees, teised vajadusel kohapealt täiendavad.
+
+Kui liikumised on paigas, siis tuleks disaini lisada, tegelaste animatsioonid.
+- Esialgu taustad - kas Timmu on pall või midagi muud, pole esialgu oluline.
+
+Menüü eraldi failina. Pavel tegeleb süvitsi gameplay kirjeldusega.
