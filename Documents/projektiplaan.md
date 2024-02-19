@@ -33,20 +33,3 @@
     Viimane testimise ettevalmistamine, mängu poleerimine ja viimistlemine enne lõplikku esitamist.
 
 
-## Koosoleku protokollid
-
-### 1. Koosolek (30. jaan. 2024 19.00)
-Osalesid: Kõik tiimist.
-- GitHubi projekti tutvustus Andero poolt.
-- Issue'de läbivaatamine, vastutajate määramine ja ajakava paikapanemine.
-- Töökorralduslikud reeglid ja ülesehitus.
-- Rollide jaotus.
-
-### 2. Koosolek (6. veebr. 2024 19.00)
-Osalesid: Kõik tiimist.
-- Ülevaade tehtud töödest.
-- Inspiratsioonitahvli ülevaade.
-- Tugivajadused ja probleemid.
-- Järgmise sprinti plaanid ja eesmärgid.
-
-
