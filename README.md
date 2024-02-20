@@ -8,6 +8,7 @@
  - [Mängumootori analüüs SWOT](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/SWOT.md)
  - [Koosoleku protokollid](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/koosoleku_protokollid.md)
  - [Personad](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/Personad.md)
+ - [Gameplay](https://github.com/TLUHK-RIF22/Team-4/blob/main/Documents/gameplay%20ja%20fun.md)
 
 ## Tiimi liikmed ja nende praktikapäevikud
  - [Andero](https://github.com/TLUHK-RIF22/Team-4/issues/7)  (Projektijuht, Arendaja)
