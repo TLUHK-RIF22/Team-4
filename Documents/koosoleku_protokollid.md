@@ -54,5 +54,35 @@ Järgmiseks tunniks on vaja:
 
 Kui liikumised on paigas, siis tuleks disaini lisada, tegelaste animatsioonid.
 - Esialgu taustad - kas Timmu on pall või midagi muud, pole esialgu oluline.
-
 Menüü eraldi failina. Pavel tegeleb süvitsi gameplay kirjeldusega.
+
+
+## 4. Koosolek (18. veebruar 2024, 16:00 - 19:00)
+Osalesid Andero, Atter, Doris ja Pavel.
+
+### Otsused ja arutelu
+- Kuidas peaks välja nägema prototüüp.
+- Kas joonistame kõik elemendid?
+  - Tausta joonistame.
+  - Spritideks kasutame välja printitud elemente.
+- Millist levelit me kujundame?
+  - Joonistame esimese leveli, kus on tihe metsaasustus.
+- Figmasse teeme gameplay joonised, kuidas Timmu saab vastasest jagu ja kuidas ei saa.
+- Andero printib tegelaskujud välja, mida saab asetada prototüüpile.
+
+## 5. Koosolek (20. veebruar 2024, 19:00 - 21:00)
+Osalesid Andero, Atter, Doris ja Pavel.
+
+### Vahepealsed arengud
+- Personaadid on loodud.
+- Gameplay dokumentatsiooni loomine: Gameplay ja lõbu.
+- Interaktsioonid välja joonistatud.
+
+### Otsused ja arutelud
+- Esmased sketšid Figmasse ja pärast assetid Google Drive'i.
+- Teeme skoori jälgimiseks tähtede süsteemi 1-3.
+- Mängu leveleid saab valida eraldi ekraanilt.
+  - Tutvusime [https://youtu.be/YAHFnF2MRsE?feature=shared](https://youtu.be/YAHFnF2MRsE?feature=shared).
+
+  
+
