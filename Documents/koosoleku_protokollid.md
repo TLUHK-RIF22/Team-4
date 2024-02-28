@@ -84,5 +84,18 @@ Osalesid Andero, Atter, Doris ja Pavel.
 - Mängu leveleid saab valida eraldi ekraanilt.
   - Tutvusime [https://youtu.be/YAHFnF2MRsE?feature=shared](https://youtu.be/YAHFnF2MRsE?feature=shared).
 
+## 6. Koosolek ( 27. veebruar 2024, 19.00 - 21.00)
+Osalesid Andero, Atter, Doris
+
+## Tagasiside arutelu.
+- Täpsustasime orava elamis harjumusi.
+- Hindasime kas oleme järiepeal oma töötega
+- taskide jagamine.
+
+## Otsused ja arutelud
+- Kuidas jagame rollide vahel ülesandeid.
+- Prioritseerimine taskidele.
+
+  
   
 
