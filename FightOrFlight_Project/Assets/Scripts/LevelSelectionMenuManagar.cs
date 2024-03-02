@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectionMenuManagar : MonoBehaviour
-{
+{   
+    public static int currLevel;
+    public void OnClickLevel(int levelNum)
+    {
+        currLevel = levelNum;
+        SceneManager.LoadScene("SamplaScene");
+    }
     public void OnClickback()
     {
         this.gameObject.SetActive(false);
