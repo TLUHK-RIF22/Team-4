@@ -9,7 +9,7 @@ public class LevelSelectionMenuManagar : MonoBehaviour
     public void OnClickLevel(int levelNum)
     {
         currLevel = levelNum;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
     public void OnClickBack()
     {
