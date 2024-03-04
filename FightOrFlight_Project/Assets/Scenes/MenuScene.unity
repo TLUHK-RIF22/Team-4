@@ -2589,6 +2589,13 @@ MonoBehaviour:
   - {fileID: 591992307}
   - {fileID: 27381184}
   - {fileID: 1486719776}
+  - {fileID: 825054378}
+  - {fileID: 1554183889}
+  - {fileID: 1568208031}
+  - {fileID: 1291033813}
+  - {fileID: 1836104235}
+  - {fileID: 2139228323}
+  - {fileID: 336544865}
   goldenStarSprite: {fileID: 7482667652216324306, guid: d5d84c299ffe7bc40a95512d3d2193a5, type: 3}
 --- !u!1 &1018706135
 GameObject:

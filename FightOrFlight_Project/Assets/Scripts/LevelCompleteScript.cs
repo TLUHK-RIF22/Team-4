@@ -15,6 +15,7 @@ public class LevelCompleteScript : MonoBehaviour
         if(starsAquired > PlayerPrefs.GetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), 0))
         PlayerPrefs.SetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), starsAquired);
         SceneManager.LoadScene("MenuScene");
+        
     }
     // Start is called before the first frame update
     void Start()
