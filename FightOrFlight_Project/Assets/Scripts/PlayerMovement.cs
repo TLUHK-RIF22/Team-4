@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float climbSpeed = 7f;
     [SerializeField] private LayerMask jumpableGround;
 
+    public CoinManager cm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,12 @@ public class PlayerMovement : MonoBehaviour
         {
             touchingTree = true;
         }
+
+        if (other.gameObject.tag == "coin")
+        {
+            Destroy(other.gameObject);
+            cm.coinCount++;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -80,4 +88,5 @@ public class PlayerMovement : MonoBehaviour
             isClimbing = false;
         }
     }
+
 }
