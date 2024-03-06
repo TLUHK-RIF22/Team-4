@@ -6,7 +6,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public GameObject MainMenu;
-    public GameObject levelSelectMenu;
+    public GameObject LevelSelectMenu;
     public GameObject helpMenu;
 
     void Start()
@@ -17,21 +17,21 @@ public class MenuManager : MonoBehaviour
     public void ShowMainMenu()
     {
         MainMenu.SetActive(true);
-        levelSelectMenu.SetActive(false);
+        LevelSelectMenu.SetActive(false);
         helpMenu.SetActive(false);
     }
 
     public void ShowLevelSelectMenu()
     {
         MainMenu.SetActive(false);
-        levelSelectMenu.SetActive(true);
+        LevelSelectMenu.SetActive(true);
         helpMenu.SetActive(false);
     }
 
     public void ShowHelpMenu()
     {
         MainMenu.SetActive(false);
-        levelSelectMenu.SetActive(false);
+        LevelSelectMenu.SetActive(false);
         helpMenu.SetActive(true);
     }
     public void StartGame()
