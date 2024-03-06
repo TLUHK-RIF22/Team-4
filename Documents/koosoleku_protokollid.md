@@ -96,6 +96,30 @@ Osalesid Andero, Atter, Doris
 - Kuidas jagame rollide vahel ülesandeid.
 - Prioritseerimine taskidele.
 
+
+## 7. Koosolek ( 05. märts 2024, 19.00 - 21.00)
+Osalesid: Kõik tiimist.
+
+### Vahepealsed arengud
+- Paberil sketsid on valmis
+- Mängu mootoris on Timmu liikumine tehtud paremaks.
+- Mängu mootoris on punkti arvestus süsteem
+- Menüü nuppud ja kavand on figmas.
+
+## Otsused ja arutelud 
+- Mis formaatis sprite tuua mängu mootorisse - otsus PNG
+- Kuidas tahame disaineridelt saada erinevad asendid spritide jaoks. - Ühe vailina mis on jaotatud kindlate mõõtude peale.
+
+## 8. Koosolek ( 05. märts 2024, 21.00 - 22.00) Arendajade koosolek
+Osalesid: Andero, Atter ja Jaagup.
+
+## Otsused ja arutelud 
+- Arendajad vaatasid üle üksteise kirjutamise stiilid - Otsustasime kuidas me kutsume välja teisi objekte.
+- Tutvustasime oma scripte ja vaatasime kuidas build ilusti teha, et oleks õige järjekord Schenes
+
+
+  
+
   
   
 
