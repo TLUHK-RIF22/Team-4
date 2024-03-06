@@ -3107,8 +3107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d0cbe3d3a6d8c449b9e9ef49b8fdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenu: {fileID: 0}
-  LevelSelectMenu: {fileID: 0}
+  MainMenu: {fileID: 968551355}
+  LevelSelectMenu: {fileID: 1007622953}
   helpMenu: {fileID: 0}
 --- !u!1 &1007622953
 GameObject:
