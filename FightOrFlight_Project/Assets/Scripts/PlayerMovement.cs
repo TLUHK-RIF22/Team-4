@@ -52,13 +52,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 isClimbing = false;
+                rb.gravityScale = 1;
             }
         }
-        else
-        {
-            rb.gravityScale = 1;
-        }
-
     }
 
     private bool IsGrounded()
@@ -88,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         {
             touchingTree = false;
             isClimbing = false;
+            rb.gravityScale = 1;
         }
     }
 
