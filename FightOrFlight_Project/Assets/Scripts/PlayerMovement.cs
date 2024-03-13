@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     public CoinManager cm;
+    [SerializeField] private HeartCounter heartCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -105,8 +106,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // Logic to reset the player or the level
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // Player loses a heart
+            heartCounter.LoseHeart();
         }
     }
     }
