@@ -7,6 +7,7 @@ TagManager:
   - Tree
   - coin
   - Nugis
+  - coinText
   layers:
   - Default
   - TransparentFX
