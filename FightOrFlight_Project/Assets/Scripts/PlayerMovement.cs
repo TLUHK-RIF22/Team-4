@@ -1,61 +1,299 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerData playerData;
     private Rigidbody2D rb;
-    private BoxCollider2D coll;
+    private CapsuleCollider2D coll;
     private float dirY = 0f;
     private float dirX = 0f;
+    private enum MovementState { Grounded, Jumping, Falling, Climbing, Gliding };
+    private MovementState movementState = MovementState.Grounded;
     private bool touchingTree = false;
-    private bool isClimbing = false;
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 14f;
-    [SerializeField] private float climbSpeed = 7f;
+    private bool isFacingRight;
+    private bool isJumpCut = false;
+    private float lastPressedJumpTime = 0;
+    private float lastOnGroundTime = 0;
+
     [SerializeField] private LayerMask jumpableGround;
 
-    public CoinManager cm;
-    [SerializeField] private HeartCounter heartCounter;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<CapsuleCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
+    private void Start()
+    {
+        setGravity(playerData.gravityScale);
+        isFacingRight = true;
+    }
 
+    private void Update()
+    {
+        #region Timers
+        lastOnGroundTime -= Time.deltaTime;
+        lastPressedJumpTime -= Time.deltaTime;
+        #endregion
+
+        #region Input Checks
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        dirY = Input.GetAxisRaw("Climb");
 
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            OnJumpInputDown();
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            OnJumpInputUp();
+        }
+        #endregion
+
+        #region Movement direction Check
+        if (dirX != 0)
+        {
+            CheckDirectionToTurn();
+        }
+        #endregion
+    }
+
+    private void FixedUpdate()
+    {
+        switch (movementState)
+        {
+            case MovementState.Grounded:
+                GroundMovement();
+                break;
+            case MovementState.Jumping:
+                JumpMovement();
+                break;
+            case MovementState.Falling:
+                FallMovement();
+                break;
+            case MovementState.Climbing:
+                ClimbMovement();
+                break;
+            case MovementState.Gliding:
+                GlideMovement();
+                break;
+        }
+    }
+
+    private void GroundMovement()
+    {
+        Run(1);
+
+        if (IsGrounded())
+        {
+            lastOnGroundTime = playerData.coyoteTime;
+        }
+        else
+        {
+            lastOnGroundTime = playerData.coyoteTime;
+            movementState = MovementState.Falling;
         }
 
-
-        dirY = Input.GetAxisRaw("Climb");
+        if (CanJump() && lastPressedJumpTime > 0)
+        {
+            movementState = MovementState.Jumping;
+            Jump();
+        }
         if (touchingTree && dirY != 0)
         {
-            isClimbing = true;
+            setGravity(0);
+            movementState = MovementState.Climbing;
         }
-        if (isClimbing)
+    }
+
+    private void JumpMovement()
+    {
+        MoveInAir(1);
+        if (isJumpCut)
         {
-            rb.velocity = new Vector2(rb.velocity.x, dirY * climbSpeed);
-            rb.gravityScale = 0;
-            if (Input.GetButtonDown("Jump"))
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                isClimbing = false;
-                rb.gravityScale = 1;
-            }
+            setGravity(playerData.gravityScale * playerData.jumpCutGravityMult);
         }
+
+        if (rb.velocity.y < 0)
+        {
+            movementState = MovementState.Falling;
+        }
+        if (touchingTree && dirY != 0)
+        {
+            isJumpCut = false;
+            setGravity(0);
+            movementState = MovementState.Climbing;
+        }
+        if(IsGrounded())
+        {
+            isJumpCut = false;
+            movementState = MovementState.Grounded;
+        }
+    }
+
+    private void FallMovement()
+    {
+        MoveInAir(1);
+
+        if (CanJump() && lastPressedJumpTime > 0)
+        {
+            movementState = MovementState.Jumping;
+            Jump();
+        }
+        if (isJumpCut)
+        {
+            setGravity(playerData.gravityScale * playerData.jumpCutGravityMult);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -playerData.maxFastFallSpeed));
+        }
+        if (IsGrounded())
+        {
+            isJumpCut = false;
+            setGravity(playerData.gravityScale);
+            movementState = MovementState.Grounded;
+        }
+        if (touchingTree && dirY != 0)
+        {
+            isJumpCut = false;
+            rb.gravityScale = 0;
+            movementState = MovementState.Climbing;
+        }
+    }
+
+    private void ClimbMovement()
+    {
+         rb.velocity = new Vector2(dirX * playerData.horizontalClimbSpeed, dirY * playerData.verticalClimbSpeed);
+
+         if (!touchingTree)
+         {
+            rb.gravityScale = playerData.gravityScale;
+            movementState = MovementState.Falling;
+         }
+         if (lastPressedJumpTime > 0)
+         {
+            setGravity(playerData.glideGravityScale);
+            movementState = MovementState.Gliding;
+         }
+    }
+
+    private void GlideMovement()
+    {
+        Glide(1);
+
+        if (IsGrounded())
+        {
+            setGravity(playerData.gravityScale);
+            movementState = MovementState.Grounded;
+        }
+        if (touchingTree && dirY != 0)
+        {
+            setGravity(0);
+            movementState = MovementState.Climbing;
+        }
+    }
+
+    private void Run(float lerpAmount)
+    {
+        float targetSpeed = dirX * playerData.runMaxSpeed;
+        targetSpeed = Mathf.Lerp(rb.velocity.x, targetSpeed, lerpAmount);
+
+        float accelerationRate;
+        accelerationRate = (Mathf.Abs(targetSpeed) > 0.01f) ? playerData.runAccelAmount : playerData.runDeccelAmount;
+
+        if (playerData.doConserveMomentum && Mathf.Abs(rb.velocity.x) > Mathf.Abs(targetSpeed) && Mathf.Sign(rb.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f)
+        {
+            accelerationRate = 0;
+        }
+
+        float speedDiff = targetSpeed - rb.velocity.x;
+        float force = speedDiff * accelerationRate;
+        rb.AddForce(force * Vector2.right, ForceMode2D.Force);
+    }
+
+    private void MoveInAir(float lerpAmount)
+    {
+        float targetSpeed = dirX * playerData.runMaxSpeed;
+        targetSpeed = Mathf.Lerp(rb.velocity.x, targetSpeed, lerpAmount);
+
+        float accelerationRate;
+        accelerationRate = (Mathf.Abs(targetSpeed) > 0.01f) ? playerData.runAccelAmount * playerData.accelInAir : playerData.runDeccelAmount * playerData.deccelInAir;
+
+        if (Mathf.Abs(rb.velocity.y) < playerData.jumpHangTimeThreshold)
+        {
+            accelerationRate *= playerData.jumpHangAccelerationMult;
+            targetSpeed *= playerData.jumpHangMaxSpeedMult;
+        }
+
+        float speedDiff = targetSpeed - rb.velocity.x;
+        float force = speedDiff * accelerationRate;
+        rb.AddForce(force * Vector2.right, ForceMode2D.Force);
+    }
+
+    private void Glide(float lerpAmount)
+    {
+        float targetSpeed = dirX * playerData.glideMaxSpeed;
+        targetSpeed = Mathf.Lerp(rb.velocity.x, targetSpeed, lerpAmount);
+
+        float accelerationRate;
+        accelerationRate = (Mathf.Abs(targetSpeed) > 0.01f) ? playerData.glideAccelAmount : playerData.glideDeccelAmount;
+
+        float speedDiff = targetSpeed - rb.velocity.x;
+        float force = speedDiff * accelerationRate;
+        rb.AddForce(force * Vector2.right, ForceMode2D.Force);
+    }
+
+    private void Jump()
+    {
+        lastPressedJumpTime = 0;
+
+        float force = playerData.jumpForce;
+        if (rb.velocity.y < 0)
+        {
+            force -= rb.velocity.y;
+        }
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+    }
+
+    private void OnJumpInputDown()
+    {
+        lastPressedJumpTime = playerData.jumpInputBufferTime;
+    }
+
+    private void OnJumpInputUp()
+    {
+        if (CanJumpCut())
+        {
+            isJumpCut = true;
+        }
+    }
+
+    private bool CanJump()
+    {
+        return (lastOnGroundTime > 0);
+    }
+
+    private bool CanJumpCut()
+    {
+        return (movementState == MovementState.Jumping && rb.velocity.y > 0);
+    }
+
+    private void CheckDirectionToTurn()
+    {
+        if (dirX > 0 != isFacingRight)
+        {
+            Turn();
+        }
+    }
+
+    private void Turn()
+    {
+        Vector3 scale = transform.localScale; 
+            scale.x *= -1;
+            transform.localScale = scale;
+
+            isFacingRight = !isFacingRight;
     }
 
     private bool IsGrounded()
@@ -64,19 +302,17 @@ public class PlayerMovement : MonoBehaviour
         return hit.collider != null;
     }
 
+    private void setGravity(float gravity)
+    {
+        rb.gravityScale = gravity;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Tree")
         {
             touchingTree = true;
         }
-
-        if (other.gameObject.tag == "coin")
-        {
-            Destroy(other.gameObject);
-            cm.coinCount++;
-        }
-  
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -84,31 +320,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Tree")
         {
             touchingTree = false;
-            isClimbing = false;
-            rb.gravityScale = 1;
         }
     }
-
-        void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Nugis"))
-        {
-            HandleEnemyCollision(collision.transform);
-        }
-    }
-    	private void HandleEnemyCollision(Transform enemy)
-    {
-        // Simple check: if player's bottom is above enemy's top, it's a "jump on top"
-        if (transform.position.y > enemy.position.y + (enemy.GetComponent<Collider2D>().bounds.size.y / 2))
-        {
-            // Logic to stun the enemy
-             enemy.GetComponent<NewBehaviourScript>().Stun();
-        }
-        else
-        {
-            // Player loses a heart
-            heartCounter.LoseHeart();
-        }
-    }
-    }
-
+}
