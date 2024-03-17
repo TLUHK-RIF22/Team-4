@@ -119,7 +119,14 @@ Osalesid: Andero, Atter ja Jaagup.
 
 
   
+## 9. Koosolek ( 12. märts 2024, 21.00 - 22.00)
+  Osalesid: Kõik tiimist.
+  
+## Tagasiside arutelu.
+- Täpsustasime millal peaks esimesed sprited saama.
+- Hindasime kas oleme järiepeal oma töötega
+- taskide jagamine.
 
-  
-  
+## Otsused ja arutelud
+- Prioritseerimine taskidele.
 
