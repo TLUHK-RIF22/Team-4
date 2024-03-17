@@ -6262,17 +6262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f41a95556e1714d88d1018ded47383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  levelObjects: []
   goldenStarSprite: {fileID: 7482667652216324306, guid: d5d84c299ffe7bc40a95512d3d2193a5, type: 3}
 --- !u!4 &1586979087
 Transform:

@@ -21,6 +21,7 @@ public class UIHandler : MonoBehaviour
 
     public void ShowLevelDialog(string status, string score)
     {
+        GetComponent<StarsHandler>().starsAcheived();
         LevelDialog.SetActive(true);
         LevelStatus.text = status;
         ScoreText.text = score;
