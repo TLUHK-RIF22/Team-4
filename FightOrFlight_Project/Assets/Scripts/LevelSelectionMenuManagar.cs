@@ -16,7 +16,7 @@ public class LevelSelectionMenuManagar : MonoBehaviour
     }
     public void OnClickBack()
     {
-        this.gameObject.SetActive(false);
+        SceneManager.LoadScene("MenuScene");
     }  
     // Start is called before the first frame update
     void Start()

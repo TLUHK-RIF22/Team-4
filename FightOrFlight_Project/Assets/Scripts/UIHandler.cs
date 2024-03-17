@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -25,6 +26,21 @@ public class UIHandler : MonoBehaviour
         LevelDialog.SetActive(true);
         LevelStatus.text = status;
         ScoreText.text = score;
+    }
+
+    public void BackTomain()
+    {
+        SceneManager.LoadScene("LevelSelectMenu");
+    }
+
+    public void ReplayLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
