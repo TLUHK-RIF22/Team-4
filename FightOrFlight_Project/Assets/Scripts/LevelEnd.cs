@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Include this namespace to work with scenes
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Include this namespace to work with scenes
 
 public class LevelEnd : MonoBehaviour
-{
+{   
+    public Text ScoreText;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the collider is tagged as "Player"
@@ -17,6 +21,6 @@ public class LevelEnd : MonoBehaviour
     void EndLevel()
     {
         // Load the menu scene
-        SceneManager.LoadScene("MenuScene"); // Make sure "MenuScene" matches the exact name of your menu scene
+        UIHandler.instance.ShowLevelDialog("Level Complete", ScoreText.text);
     }
 }
