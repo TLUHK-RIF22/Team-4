@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 968551355}
   LevelSelectMenu: {fileID: 1007622953}
-  helpMenu: {fileID: 0}
+  helpMenu: {fileID: 1586979085}
 --- !u!1 &1007622953
 GameObject:
   m_ObjectHideFlags: 0
