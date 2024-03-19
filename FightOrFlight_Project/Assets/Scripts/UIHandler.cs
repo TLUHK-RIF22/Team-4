@@ -11,6 +11,7 @@ public class UIHandler : MonoBehaviour
     public Text LevelStatus;
     public Text ScoreText;
     CoinManager cm;
+    MenuManager mm;
 
     public static UIHandler instance;
 
@@ -30,7 +31,8 @@ public class UIHandler : MonoBehaviour
 
     public void BackTomain()
     {
-        SceneManager.LoadScene("LevelSelectMenu");
+        SceneManager.LoadScene("MenuScene");
+        mm.ShowLevelSelectMenu();
     }
 
     public void ReplayLevel()
