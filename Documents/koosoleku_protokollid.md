@@ -130,3 +130,13 @@ Osalesid: Andero, Atter ja Jaagup.
 ## Otsused ja arutelud
 - Prioritseerimine taskidele.
 
+
+## 10. Koosolek ( 19. märts 2024, 21.00 - 22.00)
+  Osalesid: Kõik tiimist.
+
+  ## Otsused
+  - Arhitektuuriline muutus. Kõik levelid eraldi.
+  - Taust teha eesti päraseks.
+  - Maapind lisada.
+  
+

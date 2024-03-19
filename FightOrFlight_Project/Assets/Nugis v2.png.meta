@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 2
@@ -108,7 +108,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Nugis v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 284.66666
+        height: 120
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc8ed50cad6e094396fbf2eb6aec8c6
+      internalID: 2107966980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nugis v2_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 284.66666
+        height: 120
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6307d3439af3e448bb0bd987879777
+      internalID: 803854702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nugis v2_2
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 284.66666
+        height: 120
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f2d0df730f5164293c7210dfb661e3
+      internalID: 1239628570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nugis v2_3
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 0
+        width: 284.66666
+        height: 120
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2b41a67fbc874438ee2457cf012429
+      internalID: 789238751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nugis v2_4
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 284.66666
+        height: 120
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807a16bfaa849ca438dbe71f611d3409
+      internalID: 1893836051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nugis v2_5
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 0
+        width: 284.66666
+        height: 120
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90d53b491e885d419050ea837610fa8
+      internalID: -1419395949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +245,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nugis v2_0: 2107966980
+      Nugis v2_1: 803854702
+      Nugis v2_2: 1239628570
+      Nugis v2_3: 789238751
+      Nugis v2_4: 1893836051
+      Nugis v2_5: -1419395949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

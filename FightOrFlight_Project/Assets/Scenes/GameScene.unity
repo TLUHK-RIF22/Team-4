@@ -9759,7 +9759,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1660540821}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: BackTomain
+        m_MethodName: BackToMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
