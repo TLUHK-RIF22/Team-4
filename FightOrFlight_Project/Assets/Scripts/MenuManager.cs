@@ -9,10 +9,15 @@ public class MenuManager : MonoBehaviour
     public GameObject LevelSelectMenu;
     public GameObject helpMenu;
 
+    UIHandler UIHandler;
     void Start()
     {
-        ShowMainMenu(); // Show main menu by default
+    if (UIHandler.MenuState.ShowLevelSelect)
+    {
+        ShowLevelSelectMenu();
+        UIHandler.MenuState.ShowLevelSelect = false; // Reset the state
     }
+}
 
     public void ShowMainMenu()
     {

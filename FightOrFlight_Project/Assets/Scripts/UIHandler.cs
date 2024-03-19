@@ -28,12 +28,17 @@ public class UIHandler : MonoBehaviour
         LevelStatus.text = status;
         ScoreText.text = score;
     }
+    public static class MenuState
+{
+    public static bool ShowLevelSelect = false;
+}
 
-    public void BackTomain()
-    {
-        SceneManager.LoadScene("MenuScene");
-        mm.ShowLevelSelectMenu();
-    }
+    public void BackToMain()
+    
+{
+    MenuState.ShowLevelSelect = true; // Set the state before loading
+    SceneManager.LoadScene("MenuScene");
+}
 
     public void ReplayLevel()
     {
@@ -44,5 +49,4 @@ public class UIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 }
