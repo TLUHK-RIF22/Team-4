@@ -17,10 +17,15 @@ public class NewBehaviourScript : MonoBehaviour
     private ClimbDirection climbDirection = ClimbDirection.Up;
     // Start is called before the first frame update
     private Animator animator;
-
+    private SpriteRenderer spriteRenderer;
     void Start()
-    {
+ {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (animator == null || spriteRenderer == null)
+        {
+            Debug.LogError("Required components are missing from the GameObject.");
+        }
         startingHeight = transform.position.y;
         SetDirection(startingDirection);
     }
@@ -28,30 +33,25 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isStunned) // Check if the enemy is stunned
-        return; // Skip the normal movement logic if stunned
-        if (startingDirection == Direction.Right)
-        {   
-            if (!isClimbing)
-            {
-                this.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-            } 
-            else
-            {
-                Climb();
-            }
-        } 
-        else if (startingDirection == Direction.Left)
+        if (isStunned)
+            return;
+
+        // Determine the direction of movement
+        bool isMovingRight = startingDirection == Direction.Right;
+
+        // Move the enemy left or right unless it's climbing
+        if (!isClimbing)
         {
-            if (!isClimbing)
-            {
-                this.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-            }
-            else
-            {
-                Climb();
-            }
+            Vector3 direction = isMovingRight ? Vector3.right : Vector3.left;
+            this.transform.Translate(direction * moveSpeed * Time.deltaTime);
+            spriteRenderer.flipX = !isMovingRight; // Flip sprite based on direction
         }
+        else
+        {
+            Climb();
+        }
+
+        animator.SetBool("isMovingRight", isMovingRight); // Set the animation parameter
     }
 
     public void Stun()
