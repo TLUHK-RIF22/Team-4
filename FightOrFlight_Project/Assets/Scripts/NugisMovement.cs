@@ -77,17 +77,35 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (climbDirection == ClimbDirection.Up)
         {
-            this.transform.Translate(Vector3.up * climbSpeed * Time.deltaTime);
+            if (startingDirection == Direction.Right)
+            {
+                this.transform.eulerAngles = new Vector3(0, 0, 90);
+                this.transform.Translate(Vector3.right * climbSpeed * Time.deltaTime);
+            }
+            else
+            {
+                this.transform.eulerAngles = new Vector3(0, 0, -90);
+                this.transform.Translate(Vector3.left * climbSpeed * Time.deltaTime);
+            }
             if (transform.position.y > startingHeight + climbHeight)
             {
                 climbDirection = ClimbDirection.Down;
+                spriteRenderer.flipX = !spriteRenderer.flipX;
             }
         }
         else
         {
-            this.transform.Translate(Vector3.down * climbSpeed * Time.deltaTime);
+            if (startingDirection == Direction.Right)
+            {
+                this.transform.Translate(Vector3.left * climbSpeed * Time.deltaTime);
+            }
+            else
+            {
+                this.transform.Translate(Vector3.right * climbSpeed * Time.deltaTime);
+            }
             if (transform.position.y < startingHeight)
             {
+                this.transform.eulerAngles = new Vector3(0, 0, 0);
                 transform.position = new Vector3(transform.position.x, startingHeight, transform.position.z);
                 isClimbing = false;
                 SwitchDirection();
@@ -127,6 +145,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Tree")
         {
+            Vector3 closestPoint = other.ClosestPoint(this.transform.position);
+            this.transform.position = new Vector3(closestPoint.x, this.transform.position.y, this.transform.position.z);
             isClimbing = true;
         }
     }
