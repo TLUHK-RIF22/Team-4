@@ -15,7 +15,6 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float stunDuration = 2.0f;
     [SerializeField] private Direction startingDirection = Direction.Right;
     private ClimbDirection climbDirection = ClimbDirection.Up;
-    // Start is called before the first frame update
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     void Start()
@@ -27,11 +26,11 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.LogError("Required components are missing from the GameObject.");
         }
         startingHeight = transform.position.y;
-        SetDirection(startingDirection);
+        //SetDirection(startingDirection);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update is called once per physics update
+    void FixedUpdate()
     {
         if (isStunned)
             return;
@@ -51,7 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
             Climb();
         }
 
-        animator.SetBool("isMovingRight", isMovingRight); // Set the animation parameter
+        // animator.SetBool("isMovingRight", isMovingRight); // Pole vaja?
     }
 
     public void Stun()
@@ -89,6 +88,7 @@ public class NewBehaviourScript : MonoBehaviour
             this.transform.Translate(Vector3.down * climbSpeed * Time.deltaTime);
             if (transform.position.y < startingHeight)
             {
+                transform.position = new Vector3(transform.position.x, startingHeight, transform.position.z);
                 isClimbing = false;
                 SwitchDirection();
                 climbDirection = ClimbDirection.Up;
@@ -107,19 +107,20 @@ public class NewBehaviourScript : MonoBehaviour
             startingDirection = Direction.Right;
         }
     }
-    private void SetDirection(Direction direction)
-{
-    if (direction == Direction.Right)
-    {
-        animator.SetBool("isMovingRight", true);
-        // Flip sprite if needed: spriteRenderer.flipX = false;
-    }
-    else
-    {
-        animator.SetBool("isMovingRight", false);
-        // Flip sprite if needed: spriteRenderer.flipX = true;
-    }
-}
+
+    /* private void SetDirection(Direction direction)
+    {   
+        if (direction == Direction.Right)
+        {
+            animator.SetBool("isMovingRight", true);
+            // Flip sprite if needed: spriteRenderer.flipX = false;
+        }
+        else
+        {
+            animator.SetBool("isMovingRight", false);
+            // Flip sprite if needed: spriteRenderer.flipX = true;
+        }
+    } */
 
 
     void OnTriggerEnter2D(Collider2D other)
