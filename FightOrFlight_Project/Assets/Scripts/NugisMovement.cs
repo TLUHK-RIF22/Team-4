@@ -16,9 +16,13 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private Direction startingDirection = Direction.Right;
     private ClimbDirection climbDirection = ClimbDirection.Up;
     // Start is called before the first frame update
+    private Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         startingHeight = transform.position.y;
+        SetDirection(startingDirection);
     }
 
     // Update is called once per frame
@@ -103,6 +107,20 @@ public class NewBehaviourScript : MonoBehaviour
             startingDirection = Direction.Right;
         }
     }
+    private void SetDirection(Direction direction)
+{
+    if (direction == Direction.Right)
+    {
+        animator.SetBool("isMovingRight", true);
+        // Flip sprite if needed: spriteRenderer.flipX = false;
+    }
+    else
+    {
+        animator.SetBool("isMovingRight", false);
+        // Flip sprite if needed: spriteRenderer.flipX = true;
+    }
+}
+
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 982388269160601756}
   - component: {fileID: 948263543475212077}
   m_Layer: 6
-  m_Name: Nugis
+  m_Name: Nugis 1
   m_TagString: Nugis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
