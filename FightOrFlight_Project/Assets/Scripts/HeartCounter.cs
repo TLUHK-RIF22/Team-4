@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeartCounter : MonoBehaviour
 {
     [SerializeField] private int maxHearts = 3;
+    [SerializeField] private float damageCooldown = 1f;
     private int hearts;
+    private float remainingDamageCooldown;
     [SerializeField] private GameObject healthPanel;
     [SerializeField] private GameObject heartFilled;
     [SerializeField] private GameObject heartEmpty;
     [SerializeField] private float padding = 20f;
+    [SerializeField] private SpriteRenderer playerSprite;
     private float heartHeight;
     private float heartWidth;
     private RectTransform healthPanelTransform;
@@ -21,12 +25,13 @@ public class HeartCounter : MonoBehaviour
         heartHeight = heartFilled.GetComponent<RectTransform>().rect.height;
         heartWidth = heartFilled.GetComponent<RectTransform>().rect.width;
         healthPanelTransform = healthPanel.GetComponent<RectTransform>();
+        remainingDamageCooldown = 0;
         DrawHearts();
     }
 
-    public void GainHeart()
+    public void GainHearts(int amount = 1)
     {
-        hearts++;
+        hearts+= amount;
         if (hearts > maxHearts)
         {
             hearts = maxHearts;
@@ -34,13 +39,18 @@ public class HeartCounter : MonoBehaviour
         DrawHearts();
     }
 
-    public void LoseHeart()
+    public void LoseHearts(int amount = 1)
     {
-        hearts--;
+        if (remainingDamageCooldown > 0)
+        {
+            return;
+        }
+        hearts-= amount;
         DrawHearts();
+        StartCoroutine(DamageCooldown());
         if (hearts <= 0)
         {
-            //Game Over
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Restart the level
         }
     }
 
@@ -71,6 +81,18 @@ public class HeartCounter : MonoBehaviour
                 instantiatedHeart.GetComponent<RectTransform>().localPosition = new Vector3(i * heartWidth + padding + i * padding, -(healthPanelTransform.rect.height / 2), 0);
             }
         }
+    }
+
+    private IEnumerator DamageCooldown()
+    {
+        remainingDamageCooldown = damageCooldown;
+        while (remainingDamageCooldown > 0)
+        {
+            remainingDamageCooldown -= Time.deltaTime;
+            playerSprite.color = new Color(1, 1 - remainingDamageCooldown / damageCooldown, 1 - remainingDamageCooldown / damageCooldown);
+            yield return null;
+        }
+        playerSprite.color = Color.white;
     }
 
 

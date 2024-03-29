@@ -5579,6 +5579,7 @@ MonoBehaviour:
   cm: {fileID: 1588835295}
   heartCounter: {fileID: 1588835297}
   collectibleManager: {fileID: 1588835298}
+  yDamageThreshold: -10
 --- !u!1 &873741501
 GameObject:
   m_ObjectHideFlags: 0
@@ -7094,6 +7095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 843259473}
+  minY: 0
+  maxY: 7
 --- !u!81 &977048138
 AudioListener:
   m_ObjectHideFlags: 0
@@ -12428,7 +12431,7 @@ Transform:
   m_GameObject: {fileID: 1565364842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.59, y: 0.57, z: 0.05984121}
+  m_LocalPosition: {x: 21, y: 7.94, z: 0.05984121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12690,10 +12693,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHearts: 3
+  damageCooldown: 1
   healthPanel: {fileID: 814984188}
   heartFilled: {fileID: 1218019166457701285, guid: 63439647796b08c43b423c5093c08d4c, type: 3}
   heartEmpty: {fileID: 6986481881378690810, guid: 1e1e05957fb5c284b8ed216b05c9801a, type: 3}
   padding: 15
+  playerSprite: {fileID: 1409835620}
 --- !u!114 &1588835298
 MonoBehaviour:
   m_ObjectHideFlags: 0

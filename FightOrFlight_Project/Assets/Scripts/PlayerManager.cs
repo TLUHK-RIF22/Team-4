@@ -9,6 +9,15 @@ public class PlayerManager : MonoBehaviour
     public CoinManager cm;
     [SerializeField] private HeartCounter heartCounter;
     [SerializeField] private CollectibleManager collectibleManager;
+    [SerializeField] private int yDamageThreshold = -10;
+
+    void FixedUpdate()
+    {
+        if (transform.position.y < yDamageThreshold)
+        {
+            heartCounter.LoseHearts(10);
+        }
+    }
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -44,7 +53,7 @@ public class PlayerManager : MonoBehaviour
         else
         {
             // Player loses a heart
-            heartCounter.LoseHeart();
+            heartCounter.LoseHearts();
         }
     }
 }

@@ -5,10 +5,13 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private float minY;
+    [SerializeField] private float maxY;
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(player.position.x, this.transform.position.y, this.transform.position.z);
+        float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
+        this.transform.position = new Vector3(player.position.x, clampedY, this.transform.position.z);
     }
 }
