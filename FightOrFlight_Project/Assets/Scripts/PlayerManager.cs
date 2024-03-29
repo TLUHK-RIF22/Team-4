@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public CoinManager cm;
     [SerializeField] private HeartCounter heartCounter;
+    [SerializeField] private CollectibleManager collectibleManager;
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -16,6 +17,11 @@ public class PlayerManager : MonoBehaviour
         {
             Destroy(other.gameObject);
             cm.coinCount++;
+        }
+        if (other.gameObject.tag == "Leaf")
+        {
+            Destroy(other.gameObject);
+            collectibleManager.CollectLeaf();
         }
     }
 

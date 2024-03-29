@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerData playerData;
+    public PlayerData referencePlayerData;
+    private PlayerData playerData;
     private Rigidbody2D rb;
     private CapsuleCollider2D coll;
     private float dirY = 0f;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<CapsuleCollider2D>();
+        playerData = Instantiate(referencePlayerData);
     }
 
     private void Start()
@@ -174,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
          if (lastPressedJumpTime > 0)
          {
             setGravity(playerData.glideGravityScale);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             movementState = MovementState.Gliding;
          }
     }
@@ -307,7 +310,7 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = gravity;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Tree")
         {
@@ -315,11 +318,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Tree")
         {
             touchingTree = false;
         }
+    }
+
+    public IEnumerator AddSpeedBoost(float speed, float duration)
+    {
+        playerData.runMaxSpeed += speed;
+        playerData.verticalClimbSpeed += speed * 0.5f;
+        playerData.horizontalClimbSpeed += speed * 0.5f;
+        playerData.glideMaxSpeed += speed;
+
+        yield return new WaitForSeconds(duration);
+
+        playerData.runMaxSpeed -= speed;
+        playerData.verticalClimbSpeed -= speed * 0.5f;
+        playerData.horizontalClimbSpeed -= speed * 0.5f;
+        playerData.glideMaxSpeed -= speed;
     }
 }
