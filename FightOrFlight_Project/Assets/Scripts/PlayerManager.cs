@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
 
     public CoinManager cm;
-    [SerializeField] private HeartCounter heartCounter;
+    [SerializeField] private HealthManager healthManager;
     [SerializeField] private CollectibleManager collectibleManager;
     [SerializeField] private int yDamageThreshold = -10;
 
@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (transform.position.y < yDamageThreshold)
         {
-            heartCounter.LoseHearts(10);
+            healthManager.LoseHearts(10);
         }
     }
 
@@ -31,6 +31,11 @@ public class PlayerManager : MonoBehaviour
         {
             Destroy(other.gameObject);
             collectibleManager.CollectLeaf();
+        }
+        if (other.gameObject.tag == "Acorn")
+        {
+            Destroy(other.gameObject);
+            collectibleManager.CollectAcorn();
         }
     }
 
@@ -53,7 +58,7 @@ public class PlayerManager : MonoBehaviour
         else
         {
             // Player loses a heart
-            heartCounter.LoseHearts();
+            healthManager.LoseHearts();
         }
     }
 }

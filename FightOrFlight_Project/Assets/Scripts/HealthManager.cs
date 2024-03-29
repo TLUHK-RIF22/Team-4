@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HeartCounter : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     [SerializeField] private int maxHearts = 3;
     [SerializeField] private float damageCooldown = 1f;

@@ -9,6 +9,7 @@ TagManager:
   - Nugis
   - coinText
   - Leaf
+  - Acorn
   layers:
   - Default
   - TransparentFX
