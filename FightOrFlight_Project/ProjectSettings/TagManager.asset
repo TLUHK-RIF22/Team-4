@@ -56,6 +56,9 @@ TagManager:
   - name: Trees
     uniqueID: 3171508973
     locked: 0
+  - name: Items
+    uniqueID: 48184025
+    locked: 0
   - name: Player
     uniqueID: 1992482395
     locked: 0
