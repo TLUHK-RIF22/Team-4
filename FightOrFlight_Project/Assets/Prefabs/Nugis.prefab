@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c58c6ef8f1ed640900bcba544b3cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  climbSpeed: 7
+  moveSpeed: 5
+  climbSpeed: 5
   climbHeight: 3
   stunDuration: 2
   startingDirection: 1
