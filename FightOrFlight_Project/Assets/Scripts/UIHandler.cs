@@ -23,7 +23,7 @@ public class UIHandler : MonoBehaviour
 
     public void ShowLevelDialog(string status, string score)
     {
-        GetComponent<StarsHandler>().StarsAchieved();
+        GetComponent<StarsHandler>().StarsAchieved(0);
         LevelDialog.SetActive(true);
         LevelStatus.text = status;
         ScoreText.text = score;
@@ -45,8 +45,11 @@ public class UIHandler : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void NextLevel()
+    public void NextLevel(int starsAquired)
     {
+        FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAquired);
+        Debug.Log("Loading next level...");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Loading next level2..");
     }
 }

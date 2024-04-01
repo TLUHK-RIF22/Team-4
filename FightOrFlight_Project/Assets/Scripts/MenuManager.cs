@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Level" + 1.ToString());
     }
     // Add this if you have a back button in your LevelSelect and Help Menus
     public void GoBack()

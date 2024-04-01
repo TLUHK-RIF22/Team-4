@@ -8,6 +8,8 @@ public class StarsHandler : MonoBehaviour
     private int coinsCount;
     private bool starsAwarded;
 
+    UIHandler UI;
+
     void Start()
     {
         // Initialize coinsCount once at the start of the level
@@ -15,7 +17,7 @@ public class StarsHandler : MonoBehaviour
         starsAwarded = false;
     }
 
-    public void StarsAchieved() 
+    public void StarsAchieved(int starsAquired) 
     {
         // Check if stars are already awarded to prevent re-awarding
         if (starsAwarded)
@@ -49,6 +51,8 @@ public class StarsHandler : MonoBehaviour
         }
 
         starsAwarded = true; // Set to true to prevent re-awarding
+        PlayerPrefs.SetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), starsAquired);
+        PlayerPrefs.Save(); // Save PlayerPrefs data
     }
 
     public void ResetStars()

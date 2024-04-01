@@ -23,13 +23,13 @@ public class LevelSelectionMenuManagar : MonoBehaviour
     void Start()
     {
         UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 0);
-        for(int i = 0; i < levelObjects.Length; i++)
+        for (int i = 0; i < levelObjects.Length; i++)
         {
-            if(i <= UnlockedLevels)
+            if (i <= UnlockedLevels)
             {
                 levelObjects[i].levelButton.interactable = true;
                 int stars = PlayerPrefs.GetInt("stars" + i.ToString(), 0);
-                for(int j = 0; j < stars; j++)
+                for (int j = 0; j < stars; j++)
                 {
                     levelObjects[i].stars[j].sprite = goldenStarSprite;
                 }
