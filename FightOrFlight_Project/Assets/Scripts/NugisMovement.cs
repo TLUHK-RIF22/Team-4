@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     void Start()
- {
+    {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (animator == null || spriteRenderer == null)

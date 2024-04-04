@@ -10,6 +10,7 @@ TagManager:
   - coinText
   - Leaf
   - Acorn
+  - Kanakull
   layers:
   - Default
   - TransparentFX

@@ -37,6 +37,11 @@ public class PlayerManager : MonoBehaviour
             Destroy(other.gameObject);
             collectibleManager.CollectAcorn();
         }
+
+        if (other.gameObject.tag == "Kanakull")
+        {
+            healthManager.LoseHearts(1);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
