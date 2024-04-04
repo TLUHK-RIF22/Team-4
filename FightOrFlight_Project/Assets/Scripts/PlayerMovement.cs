@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerData playerData;
     private Rigidbody2D rb;
     private CapsuleCollider2D coll;
+    private Animator anim;
     private float dirY = 0f;
     private float dirX = 0f;
     private enum MovementState { Grounded, Jumping, Falling, Climbing, Gliding };
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<CapsuleCollider2D>();
         playerData = Instantiate(referencePlayerData);
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -83,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
                 GlideMovement();
                 break;
         }
+
+        ChangeAnimationState(movementState);
     }
 
     private void GroundMovement()
@@ -326,6 +330,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void ChangeAnimationState(MovementState newState)
+    {
+        anim.SetInteger("state", (int)newState);
+    }
+
     public IEnumerator AddSpeedBoost(float speed, float duration)
     {
         playerData.runMaxSpeed += speed;
@@ -340,4 +349,5 @@ public class PlayerMovement : MonoBehaviour
         playerData.horizontalClimbSpeed -= speed * 0.5f;
         playerData.glideMaxSpeed -= speed;
     }
+
 }
