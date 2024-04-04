@@ -11,13 +11,16 @@ public class KanakullAI : MonoBehaviour
     private float patrolMaxX;
     private float patrolMinY;
     private float patrolMaxY;
-    private float playerX;
-    private float lockOnTargetX;
     private float returnX;
+    private float distanceFromPlayer;
+    private bool hasStoppedTracking;
+    private Vector2 lockOnTarget;
+    private float attackCooldown;
     private State state;
     private Direction direction;
     [SerializeField] private float patrolSpeed;
     [SerializeField] private float attackSpeed;
+    [SerializeField] private float attackCooldownLength;
     [SerializeField] private Direction startingDirection;
     [SerializeField] private float patrolAreaWidth;
     [SerializeField] private float patrolAreaHeight;
@@ -39,6 +42,7 @@ public class KanakullAI : MonoBehaviour
         patrolMaxY = transform.position.y;
         state = State.Patrolling;
         direction = startingDirection;
+        attackCooldown = attackCooldownLength;
     }
 
     // Start is called before the first frame update
@@ -50,6 +54,13 @@ public class KanakullAI : MonoBehaviour
     // Update is called once per physics update
     void FixedUpdate()
     {
+        distanceFromPlayer = GetDistanceFromPlayer();
+
+        if (attackCooldown > 0)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+
         switch (state)
         {
             case State.Patrolling:
@@ -93,24 +104,30 @@ public class KanakullAI : MonoBehaviour
             }
         }
 
-        if (CheckIfPlayerIsInAttackRange() && CheckIfPlayerIsInFront())
+        if (CheckIfPlayerIsInAttackRange() && CheckIfPlayerIsInFront() && attackCooldown <= 0)
         {
+            hasStoppedTracking = false;
             state = State.Attacking;
         }
     }
 
     private void Attack()
     {
-        if (Mathf.Abs(transform.position.y - patrolMinY) > stopTrackingDistance && CheckIfPlayerIsInFront())
+        if (!hasStoppedTracking && CheckIfPlayerIsInFront())
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, patrolMinY, transform.position.z), attackSpeed * Time.deltaTime);
-            lockOnTargetX = player.position.x;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, transform.position.z), attackSpeed * Time.deltaTime);
+            lockOnTarget = player.position;
+
+            if (distanceFromPlayer < stopTrackingDistance)
+            {
+                hasStoppedTracking = true;
+            }
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(lockOnTargetX, patrolMinY, transform.position.z), attackSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(lockOnTarget.x, lockOnTarget.y, transform.position.z), attackSpeed * Time.deltaTime);
 
-            if (transform.position.y == patrolMinY)
+            if (transform.position.y == lockOnTarget.y)
             {
                 returnX = CalculateReturnX();
                 state = State.Returning;
@@ -124,6 +141,7 @@ public class KanakullAI : MonoBehaviour
 
         if (transform.position.y == patrolMaxY)
         {
+            attackCooldown = attackCooldownLength;
             state = State.Patrolling;
         }
     }
@@ -142,7 +160,7 @@ public class KanakullAI : MonoBehaviour
 
     private bool CheckIfPlayerIsInAttackRange()
     {
-        return (player.position.x > transform.position.x - attackRange / 2 && player.position.x < transform.position.x + attackRange / 2);
+        return (player.position.x > transform.position.x - attackRange / 2 && player.position.x < transform.position.x + attackRange / 2 && player.position.y > patrolMinY && player.position.y < patrolMaxY);
     }
 
     private bool CheckIfPlayerIsInFront()
@@ -164,7 +182,7 @@ public class KanakullAI : MonoBehaviour
         }
     }
 
-    void RotateBasedOnState()
+    private void RotateBasedOnState()
     {
         if (state == State.Attacking)
         {
@@ -194,13 +212,13 @@ public class KanakullAI : MonoBehaviour
         }
     }
 
-    void ManageLegsAnimation()
+    private float GetDistanceFromPlayer()
     {
-        Vector2 birdPosition = new Vector2(transform.position.x, transform.position.y);
-        Vector2 playerPosition = new Vector2(player.position.x, player.position.y);
+        return Vector2.Distance(transform.position, player.position);
+    }
 
-        float distanceFromPlayer = Vector2.Distance(birdPosition, playerPosition);
-
+    private void ManageLegsAnimation()
+    {
         if (distanceFromPlayer < legAnimationDistance)
         {
             animator.SetBool("legsOut", true);
