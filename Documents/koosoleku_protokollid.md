@@ -138,6 +138,27 @@ Osalesid: Andero, Atter ja Jaagup.
   - Arhitektuuriline muutus. Kõik levelid eraldi.
   - Taust teha eesti päraseks.
   - Maapind lisada.
-  - tähtede saatmine leveli valikusse. 
+  - tähtede saatmine leveli valikusse.
+
+## 11. Koosolek (27. märts 2024, 19.00 - 22.00)
+Osalesid: Kõik tiimist.
+
+### Arutelu
+- Kuidas läks esitlus ja mida teeme tagasiside põhjal.
+- Mis meie põhi fookused on
+- Kuidas me kõik levelid eraldi teeme.
+
+### otsused
+- Esimeste levelite disain valmis teha
+- Timmu animeerimine planeerida.
+
+## 12. Koosolek (02. aprill 2024, 19.00 - 22.00)
+osalesid: Kõik tiimist
+
+### Arutelu
+- Kuidas nädal läinud
+- kas on probleeme
+- Mis plaanis edasi teha
+
   
 
