@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     public GameObject MainMenu;
     public GameObject LevelSelectMenu;
     public GameObject helpMenu;
+    public GameObject SettingsMenu;
 
     UIHandler UIHandler;
     void Start()
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
         MainMenu.SetActive(true);
         LevelSelectMenu.SetActive(false);
         helpMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
     }
 
     public void ShowLevelSelectMenu()
@@ -31,6 +33,7 @@ public class MenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         LevelSelectMenu.SetActive(true);
         helpMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
     }
 
     public void ShowHelpMenu()
@@ -38,6 +41,14 @@ public class MenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         LevelSelectMenu.SetActive(false);
         helpMenu.SetActive(true);
+        SettingsMenu.SetActive(false);
+    }
+     public void ShowSettingsMenu()
+    {
+        MainMenu.SetActive(false);
+        LevelSelectMenu.SetActive(false);
+        helpMenu.SetActive(false);
+        SettingsMenu.SetActive(true); // Only the settings menu is visible
     }
     public void StartGame()
     {
