@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public CoinManager cm;
     [SerializeField] private HealthManager healthManager;
     [SerializeField] private CollectibleManager collectibleManager;
+    [SerializeField] private AudioSource audioSource; 
+    [SerializeField] private AudioClip stunSound; 
     [SerializeField] private int yDamageThreshold = -10;
 
     void FixedUpdate()
@@ -59,6 +61,10 @@ public class PlayerManager : MonoBehaviour
         {
             // Logic to stun the enemy
              enemy.GetComponent<NewBehaviourScript>().Stun();
+             if (audioSource != null && stunSound != null)
+            {
+                audioSource.PlayOneShot(stunSound);
+            }
         }
         else
         {
