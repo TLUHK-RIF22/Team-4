@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour
     UIHandler UIHandler;
     void Start()
     {
+    ShowMainMenu();
+    
     if (UIHandler.MenuState.ShowLevelSelect)
     {
         ShowLevelSelectMenu();
