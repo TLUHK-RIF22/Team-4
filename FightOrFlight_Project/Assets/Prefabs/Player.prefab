@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7496494183869884424}
   - component: {fileID: 4879444987254842762}
   - component: {fileID: 2407328989527898171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TimmuSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1992482395
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -833588429, guid: 209b3a4a1fc4229458e4418a13057b81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 3744481992338002499}
   - component: {fileID: 7924239848282127752}
   - component: {fileID: 6679338151708930614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -235,4 +235,6 @@ MonoBehaviour:
   cm: {fileID: 0}
   healthManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  audioSource: {fileID: 0}
+  stunSound: {fileID: 0}
   yDamageThreshold: -10
