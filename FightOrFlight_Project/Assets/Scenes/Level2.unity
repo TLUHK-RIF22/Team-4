@@ -3765,6 +3765,9 @@ MonoBehaviour:
   healthManager: {fileID: 1162752830}
   leafSpeedBoost: 7
   leafSpeedBoostDuration: 2.5
+  audioSource: {fileID: 0}
+  collectLeafSound: {fileID: 0}
+  collectAcornSound: {fileID: 0}
 --- !u!114 &1162752830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4651,6 +4654,8 @@ MonoBehaviour:
   player: {fileID: 1482418991}
   minY: 0
   maxY: 6
+  minX: -4.56
+  maxX: 95.15
 --- !u!81 &1626813165
 AudioListener:
   m_ObjectHideFlags: 0
