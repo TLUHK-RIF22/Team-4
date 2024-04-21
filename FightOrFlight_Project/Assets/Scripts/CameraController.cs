@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private float minY;
-    [SerializeField] private float maxY;
-    [SerializeField] private float minX;
-    [SerializeField] private float maxX;
+    [SerializeField] private float minY = 0f;
+    [SerializeField] private float maxY = 7f;
+    [SerializeField] private float minX = -50f;
+    [SerializeField] private float maxX = 50f;
     private float minYEdge;
     private float maxYEdge;
     private float minXEdge;
