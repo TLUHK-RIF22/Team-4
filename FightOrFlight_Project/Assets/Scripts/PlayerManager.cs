@@ -44,6 +44,10 @@ public class PlayerManager : MonoBehaviour
         {
             healthManager.LoseHearts(1);
         }
+        if (other.gameObject.tag == "Kassikakk")
+        {
+            healthManager.LoseHearts(1);
+        }
         if (other.gameObject.CompareTag("Nugis"))
         {
             HandleEnemyCollision(other.transform);

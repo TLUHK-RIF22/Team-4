@@ -11,6 +11,7 @@ TagManager:
   - Leaf
   - Acorn
   - Kanakull
+  - Kassikakk
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: Trees
     uniqueID: 3171508973
+    locked: 0
+  - name: Enemies
+    uniqueID: 2794367383
     locked: 0
   - name: Items
     uniqueID: 48184025
