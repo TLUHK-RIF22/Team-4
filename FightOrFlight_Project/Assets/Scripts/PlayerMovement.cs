@@ -86,7 +86,20 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
 
+        UpdateAnimationState();
+    }
+
+    private void UpdateAnimationState()
+    {
         ChangeAnimationState(movementState);
+
+        if (movementState == MovementState.Grounded)
+        {
+            if (rb.velocity.x < 0.01f && rb.velocity.x > -0.01f)
+            {
+                anim.SetInteger("state", 5);
+            }
+        }
     }
 
     private void GroundMovement()
