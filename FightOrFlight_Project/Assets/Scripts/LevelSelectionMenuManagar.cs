@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,7 @@ public class LevelSelectionMenuManagar : MonoBehaviour
     public static int UnlockedLevels;
     public void OnClickLevel(int levelNum)
     {
-        currLevel = levelNum ;
-        /* SceneManager.LoadScene("Level" + (levelNum+1).ToString()); */
+        currLevel = levelNum-1 ;
         SceneManager.LoadScene("Level" + levelNum.ToString());
     }
     public void OnClickBack()
