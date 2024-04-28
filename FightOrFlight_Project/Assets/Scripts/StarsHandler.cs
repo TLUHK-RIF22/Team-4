@@ -37,17 +37,20 @@ public class StarsHandler : MonoBehaviour
         if (percentage <= 40)
         {
             stars[0].SetActive(true);
+            starsAquired = 1;
         }
         else if (percentage >= 40 && percentage < 70)
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);
+            starsAquired = 2;
         }
         else
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);
             stars[2].SetActive(true);
+            starsAquired = 3;
         }
 
         starsAwarded = true; // Set to true to prevent re-awarding
