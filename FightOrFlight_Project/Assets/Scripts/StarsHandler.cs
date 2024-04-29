@@ -6,6 +6,7 @@ public class StarsHandler : MonoBehaviour
 {
     public GameObject[] stars;
     private int coinsCount;
+    private int starsAquired;
     private bool starsAwarded;
 
     UIHandler UI;
@@ -15,9 +16,19 @@ public class StarsHandler : MonoBehaviour
         // Initialize coinsCount once at the start of the level
         coinsCount = GameObject.FindGameObjectsWithTag("coin").Length;
         starsAwarded = false;
+
+        // Retrieve previously saved starsAquired if available
+        if (PlayerPrefs.HasKey("stars" + LevelSelectionMenuManagar.currLevel.ToString()))
+        {
+            starsAquired = PlayerPrefs.GetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString());
+        }
+        else
+        {
+            starsAquired = 0; // Initialize to 0 if no saved value exists
+        }
     }
 
-    public void StarsAchieved(int starsAquired) 
+    public void StarsAchieved(int newStarsAquired) 
     {
         // Check if stars are already awarded to prevent re-awarding
         if (starsAwarded)
@@ -37,25 +48,33 @@ public class StarsHandler : MonoBehaviour
         if (percentage <= 40)
         {
             stars[0].SetActive(true);
-            starsAquired = 1;
+            newStarsAquired = 1;
         }
         else if (percentage >= 40 && percentage < 70)
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);
-            starsAquired = 2;
+            newStarsAquired = 2;
         }
         else
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);
             stars[2].SetActive(true);
-            starsAquired = 3;
+            newStarsAquired = 3;
         }
 
+        // Only update starsAquired if the newly acquired stars are greater than the previously saved value
+        if (newStarsAquired > starsAquired)
+        {
+            starsAquired = newStarsAquired;
+            PlayerPrefs.SetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), starsAquired);
+            PlayerPrefs.Save(); // Save PlayerPrefs data
+        } 
+
         starsAwarded = true; // Set to true to prevent re-awarding
-        PlayerPrefs.SetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), starsAquired);
-        PlayerPrefs.Save(); // Save PlayerPrefs data
+        Debug.Log("newStarsAquired: " + newStarsAquired);
+        Debug.Log("starsAquired: " + starsAquired);
     }
 
     public void ResetStars()
