@@ -149,5 +149,9 @@ public class NewBehaviourScript : MonoBehaviour
             this.transform.position = new Vector3(closestPoint.x, this.transform.position.y, this.transform.position.z);
             isClimbing = true;
         }
+        if (other.gameObject.tag == "Stump")
+        {
+            SwitchDirection();
+        }
     }
 }

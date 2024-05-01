@@ -12,6 +12,8 @@ TagManager:
   - Acorn
   - Kanakull
   - Kassikakk
+  - Bush
+  - Stump
   layers:
   - Default
   - TransparentFX
@@ -66,4 +68,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1992482395
+    locked: 0
+  - name: Bush (In front)
+    uniqueID: 4081400527
     locked: 0

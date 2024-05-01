@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1992482395
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -833588429, guid: 209b3a4a1fc4229458e4418a13057b81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -236,5 +236,5 @@ MonoBehaviour:
   healthManager: {fileID: 0}
   collectibleManager: {fileID: 0}
   audioSource: {fileID: 0}
-  stunSound: {fileID: 0}
+  stunSound: {fileID: 8300000, guid: f7ab23ea223b0ba4b9d8734627164077, type: 3}
   yDamageThreshold: -10
