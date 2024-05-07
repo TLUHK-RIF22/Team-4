@@ -33,11 +33,15 @@ public class UIHandler : MonoBehaviour
     public static bool ShowLevelSelect = false;
 }
 
-    public void BackToMain()            
+    public void BackToMain(int starsAcquired)
     {
+        Debug.Log("BackToMain() called");
+        FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired); // Call OnLevelComplete before loading the scene
         MenuState.ShowLevelSelect = true; // Set the state before loading
         SceneManager.LoadScene("MenuScene");
     }
+
+
 
     public void ReplayLevel()
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,24 +5,29 @@ public class LevelCompleteScript : MonoBehaviour
 {
     public void OnLevelComplete(int starsAquired) 
     {
-        if(LevelSelectionMenuManager.currLevel == LevelSelectionMenuManager.UnlockedLevels)
+        // Update unlocked levels if necessary
+        if (LevelSelectionMenuManager.currLevel == LevelSelectionMenuManager.UnlockedLevels)
         {
             LevelSelectionMenuManager.UnlockedLevels++;
             PlayerPrefs.SetInt("UnlockedLevels", LevelSelectionMenuManager.UnlockedLevels);
         }
-        if(starsAquired > PlayerPrefs.GetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), 0))
+
+        // Save stars acquired for the current level if it's higher than the previous value
+        int previousStars = PlayerPrefs.GetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), 0);
+        if (starsAquired > previousStars)
+        {
             PlayerPrefs.SetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), starsAquired);
-        SceneManager.LoadScene("MenuScene");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        }
+
+        // Save player data immediately
+        PlayerPrefs.Save();
+
+        // Load the menu scene after a short delay (adjust as needed)
+        Invoke("LoadMenuScene", 0.5f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LoadMenuScene()
     {
-        
+        SceneManager.LoadScene("MenuScene");
     }
 }
