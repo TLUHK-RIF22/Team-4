@@ -7,13 +7,13 @@ public class LevelCompleteScript : MonoBehaviour
 {
     public void OnLevelComplete(int starsAquired) 
     {
-        if(LevelSelectionMenuManagar.currLevel == LevelSelectionMenuManagar.UnlockedLevels)
+        if(LevelSelectionMenuManager.currLevel == LevelSelectionMenuManager.UnlockedLevels)
         {
-            LevelSelectionMenuManagar.UnlockedLevels++;
-            PlayerPrefs.SetInt("UnlockedLevels", LevelSelectionMenuManagar.UnlockedLevels);
+            LevelSelectionMenuManager.UnlockedLevels++;
+            PlayerPrefs.SetInt("UnlockedLevels", LevelSelectionMenuManager.UnlockedLevels);
         }
-        if(starsAquired > PlayerPrefs.GetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), 0))
-            PlayerPrefs.SetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), starsAquired);
+        if(starsAquired > PlayerPrefs.GetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), 0))
+            PlayerPrefs.SetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), starsAquired);
         SceneManager.LoadScene("MenuScene");
     }
     // Start is called before the first frame update

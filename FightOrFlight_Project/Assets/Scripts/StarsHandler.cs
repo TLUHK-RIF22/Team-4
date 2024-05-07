@@ -18,9 +18,9 @@ public class StarsHandler : MonoBehaviour
         starsAwarded = false;
 
         // Retrieve previously saved starsAquired if available
-        if (PlayerPrefs.HasKey("stars" + LevelSelectionMenuManagar.currLevel.ToString()))
+        if (PlayerPrefs.HasKey("stars" + LevelSelectionMenuManager.currLevel.ToString()))
         {
-            starsAquired = PlayerPrefs.GetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString());
+            starsAquired = PlayerPrefs.GetInt("stars" + LevelSelectionMenuManager.currLevel.ToString());
         }
         else
         {
@@ -68,7 +68,7 @@ public class StarsHandler : MonoBehaviour
         if (newStarsAquired > starsAquired)
         {
             starsAquired = newStarsAquired;
-            PlayerPrefs.SetInt("stars" + LevelSelectionMenuManagar.currLevel.ToString(), starsAquired);
+            PlayerPrefs.SetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), starsAquired);
             PlayerPrefs.Save(); // Save PlayerPrefs data
         } 
 

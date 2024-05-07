@@ -33,23 +33,37 @@ public class UIHandler : MonoBehaviour
     public static bool ShowLevelSelect = false;
 }
 
-    public void BackToMain()
-    
-{
-    MenuState.ShowLevelSelect = true; // Set the state before loading
-    SceneManager.LoadScene("MenuScene");
-}
+    public void BackToMain()            
+    {
+        MenuState.ShowLevelSelect = true; // Set the state before loading
+        SceneManager.LoadScene("MenuScene");
+    }
 
     public void ReplayLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void NextLevel(int starsAquired)
+    public void NextLevel(int starsAcquired)
+{
+    FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired);
+    Debug.Log("Finished level: " + LevelSelectionMenuManager.levelNum.ToString());
+    Debug.Log("Current level: " + LevelSelectionMenuManager.currLevel.ToString());
+
+    // Increment the level number
+    LevelSelectionMenuManager.levelNum++;
+
+    // Load the next level if it exists
+    int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+    if (nextLevelIndex < SceneManager.sceneCountInBuildSettings)
     {
-        FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAquired);
-        Debug.Log("Loading next level...");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("Loading next level2..");
+        SceneManager.LoadScene("Level" + LevelSelectionMenuManager.levelNum.ToString());
+        Debug.Log("Loading next level: Level" + LevelSelectionMenuManager.levelNum.ToString());
     }
+    else
+    {
+        Debug.LogWarning("No more levels available.");
+    }
+}
+
 }
