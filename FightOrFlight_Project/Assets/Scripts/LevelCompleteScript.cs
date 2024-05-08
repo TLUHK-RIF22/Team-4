@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelCompleteScript : MonoBehaviour
 {
     public void OnLevelComplete(int starsAquired) 
-    {
+    {    
         if(LevelSelectionMenuManager.currLevel == LevelSelectionMenuManager.UnlockedLevels)
         {
             LevelSelectionMenuManager.UnlockedLevels++;
@@ -14,12 +14,14 @@ public class LevelCompleteScript : MonoBehaviour
         }
         if(starsAquired > PlayerPrefs.GetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), 0))
             PlayerPrefs.SetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), starsAquired);
+        Debug.Log("Current level: " + LevelSelectionMenuManager.currLevel.ToString());
+        Debug.Log("Current level: " + LevelSelectionMenuManager.UnlockedLevels.ToString());   
         SceneManager.LoadScene("MenuScene");
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+       /*  PlayerPrefs.DeleteAll(); */
     }
 
     // Update is called once per frame

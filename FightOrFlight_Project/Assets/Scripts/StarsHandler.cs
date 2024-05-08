@@ -68,7 +68,7 @@ public class StarsHandler : MonoBehaviour
         if (newStarsAquired > starsAquired)
         {
             starsAquired = newStarsAquired;
-            PlayerPrefs.SetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), starsAquired);
+            PlayerPrefs.SetInt("stars" + (LevelSelectionMenuManager.currLevel - 1).ToString(), starsAquired);
             PlayerPrefs.Save(); // Save PlayerPrefs data
         } 
 

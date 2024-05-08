@@ -46,25 +46,28 @@ public class UIHandler : MonoBehaviour
     }
 
     public void NextLevel(int starsAcquired)
-{
-    FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired);
-    Debug.Log("Finished level: " + LevelSelectionMenuManager.levelNum.ToString());
-    Debug.Log("Current level: " + LevelSelectionMenuManager.currLevel.ToString());
-
-    // Increment the level number
-    LevelSelectionMenuManager.levelNum++;
-
-    // Load the next level if it exists
-    int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
-    if (nextLevelIndex < SceneManager.sceneCountInBuildSettings)
     {
-        SceneManager.LoadScene("Level" + LevelSelectionMenuManager.levelNum.ToString());
-        Debug.Log("Loading next level: Level" + LevelSelectionMenuManager.levelNum.ToString());
+        FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired);
+        Debug.Log("Finished level: " + LevelSelectionMenuManager.levelNum.ToString());
+        Debug.Log("Current level: " + LevelSelectionMenuManager.currLevel.ToString());
+        Debug.Log("Unlocked level: " + LevelSelectionMenuManager.UnlockedLevels.ToString());
+        
+
+        // Increment the level number
+        LevelSelectionMenuManager.levelNum++;
+        
+
+        // Load the next level if it exists
+        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextLevelIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene("Level" + LevelSelectionMenuManager.levelNum.ToString());
+            Debug.Log("Loading next level: Level" + LevelSelectionMenuManager.levelNum.ToString());
+        }
+        else
+        {
+            Debug.LogWarning("No more levels available.");
+        }
     }
-    else
-    {
-        Debug.LogWarning("No more levels available.");
-    }
-}
 
 }

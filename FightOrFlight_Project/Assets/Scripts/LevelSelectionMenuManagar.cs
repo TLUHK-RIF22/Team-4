@@ -10,17 +10,26 @@ public class LevelSelectionMenuManager : MonoBehaviour
     public Sprite goldenStarSprite;
     public static int currLevel;
     public static int levelNum; // This should be reset after loading a level
-    public static int UnlockedLevels;
+    public static int UnlockedLevels = 1;
 
     public void OnClickLevel(int levelIndex)
+{
+    levelNum = levelIndex; // Update levelNum based on the selected level index
+    currLevel = levelIndex;
+    SceneManager.LoadScene("Level" + levelNum.ToString());
+    Debug.Log("Loading levelNum: " + levelNum);
+    Debug.Log("CurrLelvel: " + currLevel);
+}
+
+
+  /*   public void OnClickLevel(int levelIndex)
     {
-        levelNum = levelIndex; // Update levelNum based on the selected level
-        currLevel = levelIndex; // Update currLevel (zero-based index)
+        levelNum = 1; // Update levelNum based on the selected level
         SceneManager.LoadScene("Level" + levelNum.ToString());
         Debug.Log("Loading curr: " + currLevel);
         Debug.Log("Loading level: " + levelNum);
     }
-
+ */
     public void OnClickBack()
     {
         SceneManager.LoadScene("MenuScene");
@@ -28,10 +37,10 @@ public class LevelSelectionMenuManager : MonoBehaviour
 
     void Start()
     {
-        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 0);
+        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1);
         for (int i = 0; i < levelObjects.Length; i++)
         {
-            if (i <= UnlockedLevels)
+            if (i <= UnlockedLevels - 1)
             {
                 levelObjects[i].levelButton.interactable = true;
                 int stars = PlayerPrefs.GetInt("stars" + i.ToString(), 0);
