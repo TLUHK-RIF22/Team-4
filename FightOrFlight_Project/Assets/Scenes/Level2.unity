@@ -1424,9 +1424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48ce3003032a7a4b9aec1aa0a709efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelDialog: {fileID: 0}
-  LevelStatus: {fileID: 0}
-  ScoreText: {fileID: 0}
+  LevelDialog: {fileID: 1342724447}
+  LevelStatus: {fileID: 1002299355}
+  ScoreText: {fileID: 2057977514}
 --- !u!114 &477569302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,9 +1440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1386692414}
+  - {fileID: 1460848780}
+  - {fileID: 2120041721}
 --- !u!4 &477569303
 Transform:
   m_ObjectHideFlags: 0
