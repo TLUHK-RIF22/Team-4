@@ -7815,7 +7815,7 @@ MonoBehaviour:
   MainMenu: {fileID: 968551355}
   LevelSelectMenu: {fileID: 1007622953}
   helpMenu: {fileID: 1586979085}
-  SettingsMenu: {fileID: 0}
+  SettingsMenu: {fileID: 896404308}
 --- !u!1 &1694605004
 GameObject:
   m_ObjectHideFlags: 0
