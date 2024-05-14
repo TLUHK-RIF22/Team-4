@@ -46,4 +46,5 @@ MonoBehaviour:
   jumpInputBufferTime: 0.1
   glideCoyoteTime: 0.5
   noClimbingAfterGlideTime: 0.5
+  climbAfterFallTime: 0.25
   _revert: 0
