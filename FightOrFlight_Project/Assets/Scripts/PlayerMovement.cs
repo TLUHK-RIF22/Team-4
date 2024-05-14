@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpCut = false;
     private float lastPressedJumpTime = 0;
     private float lastOnGroundTime = 0;
+    private float lastClimbingTime = 0;
+    private float lastFallWhenClimbingTime = 0;
+    private float lastStartGlideTime = 0;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -41,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
         #region Timers
         lastOnGroundTime -= Time.deltaTime;
         lastPressedJumpTime -= Time.deltaTime;
+        lastClimbingTime -= Time.deltaTime;
+        lastFallWhenClimbingTime -= Time.deltaTime;
+        lastStartGlideTime -= Time.deltaTime;
         #endregion
 
         #region Input Checks
@@ -182,29 +188,38 @@ public class PlayerMovement : MonoBehaviour
             setGravity(playerData.gravityScale);
             movementState = MovementState.Grounded;
         }
-        if (touchingTree && dirY != 0)
+        if (touchingTree && (dirY != 0 || lastFallWhenClimbingTime > 0))
         {
             isJumpCut = false;
             rb.gravityScale = 0;
             movementState = MovementState.Climbing;
         }
+        if (lastClimbingTime > 0 && lastPressedJumpTime > 0)
+        {
+            setGravity(playerData.glideGravityScale);
+            movementState = MovementState.Gliding;
+        }
     }
 
     private void ClimbMovement()
     {
-         rb.velocity = new Vector2(dirX * playerData.horizontalClimbSpeed, dirY * playerData.verticalClimbSpeed);
+        lastClimbingTime = playerData.glideCoyoteTime;
 
-         if (!touchingTree)
-         {
-            rb.gravityScale = playerData.gravityScale;
-            movementState = MovementState.Falling;
-         }
-         if (lastPressedJumpTime > 0)
-         {
-            setGravity(playerData.glideGravityScale);
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            movementState = MovementState.Gliding;
-         }
+        rb.velocity = new Vector2(dirX * playerData.horizontalClimbSpeed, dirY * playerData.verticalClimbSpeed);
+
+        if (!touchingTree)
+        {
+        lastFallWhenClimbingTime = playerData.climbAfterFallTime;
+        rb.gravityScale = playerData.gravityScale;
+        movementState = MovementState.Falling;
+        }
+        if (lastPressedJumpTime > 0)
+        {
+        lastStartGlideTime = playerData.noClimbingAfterGlideTime;
+        setGravity(playerData.glideGravityScale);
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        movementState = MovementState.Gliding;
+        }
     }
 
     private void GlideMovement()
@@ -216,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
             setGravity(playerData.gravityScale);
             movementState = MovementState.Grounded;
         }
-        if (touchingTree && dirY != 0)
+        if (touchingTree && dirY != 0 && lastStartGlideTime < 0)
         {
             setGravity(0);
             movementState = MovementState.Climbing;

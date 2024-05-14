@@ -44,4 +44,6 @@ MonoBehaviour:
   glideDeccelAmount: 3.3333333
   coyoteTime: 0.1
   jumpInputBufferTime: 0.1
+  glideCoyoteTime: 0.5
+  noClimbingAfterGlideTime: 0.5
   _revert: 0
