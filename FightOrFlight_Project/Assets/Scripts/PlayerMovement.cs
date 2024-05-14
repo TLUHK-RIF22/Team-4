@@ -92,12 +92,21 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         ChangeAnimationState(movementState);
+        anim.SetFloat("speed", 1);
 
         if (movementState == MovementState.Grounded)
         {
             if (rb.velocity.x < 0.01f && rb.velocity.x > -0.01f)
             {
                 anim.SetInteger("state", 5);
+            }
+        }
+
+        if (movementState == MovementState.Climbing)
+        {
+            if (rb.velocity.y == 0 && rb.velocity.x == 0)
+            {
+                anim.SetFloat("speed", 0);
             }
         }
     }
