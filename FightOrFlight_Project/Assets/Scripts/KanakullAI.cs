@@ -127,7 +127,7 @@ public class KanakullAI : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(lockOnTarget.x, lockOnTarget.y, transform.position.z), attackSpeed * Time.deltaTime);
 
-            if (transform.position.y == lockOnTarget.y)
+            if (transform.position.y - lockOnTarget.y < 0.01f && transform.position.y - lockOnTarget.y > -0.01f)
             {
                 returnX = CalculateReturnX();
                 state = State.Returning;

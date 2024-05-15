@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float lastStartGlideTime = 0;
 
     [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private bool climbOnLevelStart = true;
 
 
     private void Awake()
@@ -37,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
     {
         setGravity(playerData.gravityScale);
         isFacingRight = true;
+
+        if (climbOnLevelStart)
+        {
+            movementState = MovementState.Climbing;
+        }
     }
 
     private void Update()

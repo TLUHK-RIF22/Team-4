@@ -220,6 +220,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
+  climbOnLevelStart: 1
 --- !u!114 &6679338151708930614
 MonoBehaviour:
   m_ObjectHideFlags: 0
