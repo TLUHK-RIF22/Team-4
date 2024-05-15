@@ -58,6 +58,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (!isStunned)
         {
             isStunned = true;
+            animator.SetFloat("speed", 0); // Set the speed parameter to 0
             StartCoroutine(RecoverFromStun());
         }
     }
@@ -65,6 +66,8 @@ public class NewBehaviourScript : MonoBehaviour
     private IEnumerator RecoverFromStun()
     {
         yield return new WaitForSeconds(stunDuration); // Wait for the duration of the stun
+
+        animator.SetFloat("speed", 1); // Set the speed parameter to 1
 
         isStunned = false; // Reset the stun state
         // Optionally, re-enable the Collider2D
