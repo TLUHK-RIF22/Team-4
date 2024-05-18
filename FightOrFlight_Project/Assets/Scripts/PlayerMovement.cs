@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private bool climbOnLevelStart = true;
+    [SerializeField, Range(0.01f, 0.3f)] private float walkingAnimationSpeedMultiplier = .15f;
 
 
     private void Awake()
@@ -104,10 +105,11 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         ChangeAnimationState(movementState);
-        anim.SetFloat("speed", 1);
+        anim.SetFloat("climbSpeed", 1);
 
         if (movementState == MovementState.Grounded)
         {
+            anim.SetFloat("walkSpeed", Mathf.Abs(rb.velocity.x) * walkingAnimationSpeedMultiplier);
             if (rb.velocity.x < 0.01f && rb.velocity.x > -0.01f)
             {
                 anim.SetInteger("state", 5);
@@ -118,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (rb.velocity.y == 0 && rb.velocity.x == 0)
             {
-                anim.SetFloat("speed", 0);
+                anim.SetFloat("climbSpeed", 0);
             }
         }
     }
