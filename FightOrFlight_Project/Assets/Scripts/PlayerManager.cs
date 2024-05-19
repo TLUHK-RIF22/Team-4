@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour
         if (transform.position.y > enemy.position.y + (enemy.GetComponent<Collider2D>().bounds.size.y / 2))
         {
             // Logic to stun the enemy
-             enemy.GetComponent<NewBehaviourScript>().Stun();
+             enemy.GetComponent<NugisAI>().Stun();
              if (audioSource != null && stunSound != null)
             {
                 audioSource.PlayOneShot(stunSound);

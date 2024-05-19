@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D coll;
     private Animator anim;
-    private float dirY = 0f;
-    private float dirX = 0f;
-    private enum MovementState { Grounded, Jumping, Falling, Climbing, Gliding };
-    private MovementState movementState = MovementState.Grounded;
+    public float dirY { get; private set; } = 0f;
+    public float dirX { get; private set; } = 0f;
+    public enum MovementState { Grounded, Jumping, Falling, Climbing, Gliding };
+    public MovementState movementState { get; private set; } = MovementState.Grounded;
     private bool touchingTree = false;
     private bool isFacingRight;
     private bool isJumpCut = false;

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class NugisAI : MonoBehaviour
 {
-    private bool isStunned = false;
+    public bool isStunned { get; private set; } = false;
     private bool isClimbing = false;
     private float startingHeight;
     private enum Direction {Left, Right};
