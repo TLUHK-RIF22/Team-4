@@ -48,9 +48,9 @@ public class UIHandler : MonoBehaviour
     public void NextLevel(int starsAcquired)
     {
         FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired);
-        Debug.Log("Finished level: " + LevelSelectionMenuManager.levelNum.ToString());
-        Debug.Log("Current level: " + LevelSelectionMenuManager.currLevel.ToString());
-        Debug.Log("Unlocked level: " + LevelSelectionMenuManager.UnlockedLevels.ToString());
+        Debug.Log("UIH Finished level: " + LevelSelectionMenuManager.levelNum.ToString());
+        Debug.Log("UIH Current level: " + LevelSelectionMenuManager.currLevel.ToString());
+        Debug.Log("UIH Unlocked level: " + LevelSelectionMenuManager.UnlockedLevels.ToString());
         
 
         // Increment the level number

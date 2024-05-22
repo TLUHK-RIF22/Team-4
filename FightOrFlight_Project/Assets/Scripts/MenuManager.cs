@@ -57,6 +57,8 @@ public class MenuManager : MonoBehaviour
         LevelSelectionMenuManager.levelNum = 1; // Reset the level number
         LevelSelectionMenuManager.currLevel = 1; // Reset the current level
         SceneManager.LoadScene("Level" + 1.ToString());
+        Debug.Log("MM Loading levelNum: " + LevelSelectionMenuManager.levelNum);
+        Debug.Log("MM CurrLelvel: " + LevelSelectionMenuManager.currLevel);
     }
     // Add this if you have a back button in your LevelSelect and Help Menus
     public void GoBack()
