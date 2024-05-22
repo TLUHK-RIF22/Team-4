@@ -40,10 +40,7 @@ public class MenuManager : MonoBehaviour
 
     public void ShowHelpMenu()
     {
-        MainMenu.SetActive(false);
-        LevelSelectMenu.SetActive(false);
-        helpMenu.SetActive(true);
-        SettingsMenu.SetActive(false);
+        SceneManager.LoadScene("TutorialScene"); 
     }
      public void ShowSettingsMenu()
     {
