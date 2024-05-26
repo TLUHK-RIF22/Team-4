@@ -125,7 +125,7 @@ MonoBehaviour:
   attackCooldownLength: 2
   startingDirection: 0
   patrolAreaWidth: 22
-  patrolAreaHeight: 8.16
+  patrolAreaHeight: 12.28
   attackRange: 12
   stopTrackingDistance: 2.3
   flyUpAngle: 30
