@@ -9,45 +9,47 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float maxY = 7f;
     [SerializeField] private float minX = -50f;
     [SerializeField] private float maxX = 50f;
-    private float minYEdge;
-    private float maxYEdge;
-    private float minXEdge;
-    private float maxXEdge;
+    private float minYPosition;
+    private float maxYPosition;
+    private float minXPosition;
+    private float maxXPosition;
     private float cameraSize;
 
+    void Start()
+    {
+        cameraSize = Camera.main.orthographicSize;
+        minYPosition = minY + cameraSize;
+        maxYPosition = maxY - cameraSize;
+        minXPosition = minX + cameraSize * Camera.main.aspect;
+        maxXPosition = maxX - cameraSize * Camera.main.aspect;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
-        float clampedX = Mathf.Clamp(player.position.x, minX, maxX);
+        Camera.main.ResetAspect();
+        minXPosition = minX + cameraSize * Camera.main.aspect;
+        maxXPosition = maxX - cameraSize * Camera.main.aspect;
+        float clampedY = Mathf.Clamp(player.position.y, minYPosition, maxYPosition);
+        float clampedX = Mathf.Clamp(player.position.x, minXPosition, maxXPosition);
         this.transform.position = new Vector3(clampedX, clampedY, this.transform.position.z);
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 0, 0, 0.2f);
-        Gizmos.DrawLine(new Vector3(minXEdge, minYEdge, 0), new Vector3(maxXEdge, minYEdge, 0));
-        Gizmos.DrawLine(new Vector3(maxXEdge, minYEdge, 0), new Vector3(maxXEdge, maxYEdge, 0));
-        Gizmos.DrawLine(new Vector3(maxXEdge, maxYEdge, 0), new Vector3(minXEdge, maxYEdge, 0));
-        Gizmos.DrawLine(new Vector3(minXEdge, maxYEdge, 0), new Vector3(minXEdge, minYEdge, 0));
+        Gizmos.DrawLine(new Vector3(minX, minY, 0), new Vector3(maxX, minY, 0));
+        Gizmos.DrawLine(new Vector3(maxX, minY, 0), new Vector3(maxX, maxY, 0));
+        Gizmos.DrawLine(new Vector3(maxX, maxY, 0), new Vector3(minX, maxY, 0));
+        Gizmos.DrawLine(new Vector3(minX, maxY, 0), new Vector3(minX, minY, 0));
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1, 0, 0, 1f);
-        Gizmos.DrawLine(new Vector3(minXEdge, minYEdge, 0), new Vector3(maxXEdge, minYEdge, 0));
-        Gizmos.DrawLine(new Vector3(maxXEdge, minYEdge, 0), new Vector3(maxXEdge, maxYEdge, 0));
-        Gizmos.DrawLine(new Vector3(maxXEdge, maxYEdge, 0), new Vector3(minXEdge, maxYEdge, 0));
-        Gizmos.DrawLine(new Vector3(minXEdge, maxYEdge, 0), new Vector3(minXEdge, minYEdge, 0));
+        Gizmos.DrawLine(new Vector3(minX, minY, 0), new Vector3(maxX, minY, 0));
+        Gizmos.DrawLine(new Vector3(maxX, minY, 0), new Vector3(maxX, maxY, 0));
+        Gizmos.DrawLine(new Vector3(maxX, maxY, 0), new Vector3(minX, maxY, 0));
+        Gizmos.DrawLine(new Vector3(minX, maxY, 0), new Vector3(minX, minY, 0));
     }
-
-    void OnValidate()
-    {
-        cameraSize = Camera.main.orthographicSize;
-        minYEdge = minY - cameraSize;
-        maxYEdge = maxY + cameraSize;
-        minXEdge = minX - cameraSize * Camera.main.aspect;
-        maxXEdge = maxX + cameraSize * Camera.main.aspect;
-    }   
 }
