@@ -8,11 +8,22 @@ public class StarsHandler : MonoBehaviour
     private int coinsCount;
     private int starsAquired;
     private bool starsAwarded;
+    private GameObject levelUICanvas;
 
     UIHandler UI;
 
     void Start()
-    {
+    {   
+        // Find StarsHolder and store all stars in an array
+        levelUICanvas = GameObject.Find("LevelUICanvas");
+        GameObject levelDialog = levelUICanvas.transform.Find("LevelDialog").gameObject;
+        GameObject starsHolder = levelDialog.transform.Find("StarsHolder").gameObject;
+        foreach (Transform star in starsHolder.transform)
+        {
+            stars[star.GetSiblingIndex()] = star.gameObject;
+        }
+
+
         // Initialize coinsCount once at the start of the level
         coinsCount = GameObject.FindGameObjectsWithTag("coin").Length;
         starsAwarded = false;

@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private float damageCooldown = 1f;
     private int hearts;
     private float remainingDamageCooldown;
-    [SerializeField] private GameObject healthPanel;
+    private GameObject healthPanel;
     [SerializeField] private GameObject heartFilled;
     [SerializeField] private GameObject heartEmpty;
     [SerializeField] private float padding = 20f;
@@ -21,6 +21,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthPanel = GameObject.Find("HealthPanel");
         hearts = maxHearts;
         heartHeight = heartFilled.GetComponent<RectTransform>().rect.height;
         heartWidth = heartFilled.GetComponent<RectTransform>().rect.width;

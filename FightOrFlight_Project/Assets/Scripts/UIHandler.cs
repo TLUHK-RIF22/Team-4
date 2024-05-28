@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
+    private GameObject levelUICanvas;
     public GameObject LevelDialog;
     public Text LevelStatus;
     public Text ScoreText;
@@ -19,6 +20,14 @@ public class UIHandler : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+    }
+
+    void Start()
+    {
+        levelUICanvas = GameObject.Find("LevelUICanvas");
+        LevelDialog = levelUICanvas.transform.Find("LevelDialog").gameObject;
+        LevelStatus = LevelDialog.transform.Find("LevelStatus").GetComponent<Text>();
+        ScoreText = LevelDialog.transform.Find("CoinScore").GetComponent<Text>();
     }
 
     public void ShowLevelDialog(string status, string score)

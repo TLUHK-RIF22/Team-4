@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class CoinManager : MonoBehaviour
 {
     public int coinCount;
-    public Text coinText;
+    private Text coinText;
     // Start is called before the first frame update
     void Start()
     {
-        
+        coinText = GameObject.Find("StarText").GetComponent<Text>();
     }
 
     // Update is called once per frame
