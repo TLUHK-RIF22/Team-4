@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player").transform;
         cameraSize = Camera.main.orthographicSize;
         minYPosition = minY + cameraSize;
         maxYPosition = maxY - cameraSize;
