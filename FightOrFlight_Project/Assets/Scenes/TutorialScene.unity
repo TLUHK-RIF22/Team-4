@@ -394,8 +394,8 @@ MonoBehaviour:
   m_text: "Puu otsas \xFCles ja alla ronimiseks kasuta <br> W & S v\xF5i \u2191 &
     \u2193"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -528,8 +528,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Nugise on v\xF5imalik uimaseks l\xFC\xFCa talle p\xE4he h\xFCpates"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -553,8 +553,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1292,8 +1292,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Taseme l\xF5ppu t\xE4histab puu\xF5\xF5nsus\n\nRoni sinna sisse!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1317,8 +1317,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1915,8 +1915,8 @@ MonoBehaviour:
   m_text: "M\xE4ngu jooksul saab koguda t\xE4hti, mis t\xF5stavad taseme skoori <br>\nT\xE4hed
     v\xF5ivad olla peidetud"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1940,8 +1940,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2726,8 +2726,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "H\xFCppamiseks vajuta <br> t\xFChikut"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2751,8 +2751,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2954,7 +2954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &725706327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3493,8 +3493,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Lehed teevad Timmu l\xFChikeseks ajaks kiiremaks"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3518,8 +3518,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5963,8 +5963,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Tammet\xF5rud annavad \xFChe elu tagasi"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5988,8 +5988,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6244,8 +6244,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Siin on m\xE4ngu esimene vastane - nugis"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6269,8 +6269,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6755,8 +6755,8 @@ MonoBehaviour:
   m_text: "Ronida saab ka paremale ja vasakule kasutades <br> A & D v\xF5i \u2190
     & \u2192"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6780,8 +6780,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7094,8 +7094,8 @@ MonoBehaviour:
   m_text: "Roni puu otsa ja vajuta <b>t\xFChikut</b>, et alustada lendamist <br>
     \nLennu ajal saab A & D v\xF5i \u2190 & \u2192 abil suunda muuta"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7119,8 +7119,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7295,8 +7295,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "K\xF5ndimiseks kasuta <br> A & D v\xF5i \u2190 & \u2192"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
+  m_sharedMaterial: {fileID: -1469830874905634355, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7320,8 +7320,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.44
+  m_fontSizeBase: 0.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
