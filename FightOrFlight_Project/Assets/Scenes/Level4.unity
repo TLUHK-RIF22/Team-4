@@ -799,30 +799,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1739838307586096571, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1739838307586096571, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746336911459471772, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746336911459471772, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReplayLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5163071314934604883, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5163071314934604883, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMain
-      objectReference: {fileID: 0}
     - target: {fileID: 7703944071427258789, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
       propertyPath: m_Name
       value: LevelUICanvas
@@ -4177,7 +4153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &982224557
 MonoBehaviour:
   m_ObjectHideFlags: 0
