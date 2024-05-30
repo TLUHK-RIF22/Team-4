@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D coll;
     private Animator anim;
+    private SpriteRenderer spriteRenderer;
     public float dirY { get; private set; } = 0f;
     public float dirX { get; private set; } = 0f;
     public enum MovementState { Grounded, Jumping, Falling, Climbing, Gliding };
@@ -16,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
     private bool touchingTree = false;
     private bool isFacingRight;
     private bool isJumpCut = false;
+    private bool isMuddy = false;
     private float lastPressedJumpTime = 0;
     private float lastOnGroundTime = 0;
     private float lastClimbingTime = 0;
     private float lastFallWhenClimbingTime = 0;
     private float lastStartGlideTime = 0;
+    private Coroutine mudColorCoroutine;
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private bool climbOnLevelStart = true;
@@ -33,11 +36,12 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<CapsuleCollider2D>();
         playerData = Instantiate(referencePlayerData);
         anim = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
     {
-        setGravity(playerData.gravityScale);
+        SetGravity(playerData.gravityScale);
         isFacingRight = true;
 
         if (climbOnLevelStart)
@@ -146,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (touchingTree && dirY != 0)
         {
-            setGravity(0);
+            SetGravity(0);
             movementState = MovementState.Climbing;
         }
     }
@@ -156,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
         MoveInAir(1);
         if (isJumpCut)
         {
-            setGravity(playerData.gravityScale * playerData.jumpCutGravityMult);
+            SetGravity(playerData.gravityScale * playerData.jumpCutGravityMult);
         }
 
         if (rb.velocity.y < 0)
@@ -166,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
         if (touchingTree && dirY != 0)
         {
             isJumpCut = false;
-            setGravity(0);
+            SetGravity(0);
             movementState = MovementState.Climbing;
         }
         if(IsGrounded())
@@ -187,24 +191,24 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isJumpCut)
         {
-            setGravity(playerData.gravityScale * playerData.jumpCutGravityMult);
+            SetGravity(playerData.gravityScale * playerData.jumpCutGravityMult);
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -playerData.maxFastFallSpeed));
         }
         if (IsGrounded())
         {
             isJumpCut = false;
-            setGravity(playerData.gravityScale);
+            SetGravity(playerData.gravityScale);
             movementState = MovementState.Grounded;
         }
         if (touchingTree && (dirY != 0 || lastFallWhenClimbingTime > 0))
         {
             isJumpCut = false;
-            rb.gravityScale = 0;
+            SetGravity(0);
             movementState = MovementState.Climbing;
         }
         if (lastClimbingTime > 0 && lastPressedJumpTime > 0)
         {
-            setGravity(playerData.glideGravityScale);
+            SetGravity(playerData.glideGravityScale);
             movementState = MovementState.Gliding;
         }
     }
@@ -218,13 +222,13 @@ public class PlayerMovement : MonoBehaviour
         if (!touchingTree)
         {
         lastFallWhenClimbingTime = playerData.climbAfterFallTime;
-        rb.gravityScale = playerData.gravityScale;
+        SetGravity(playerData.gravityScale);
         movementState = MovementState.Falling;
         }
         if (lastPressedJumpTime > 0)
         {
         lastStartGlideTime = playerData.noClimbingAfterGlideTime;
-        setGravity(playerData.glideGravityScale);
+        SetGravity(playerData.glideGravityScale);
         rb.velocity = new Vector2(rb.velocity.x, 0);
         movementState = MovementState.Gliding;
         }
@@ -234,14 +238,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Glide(1);
 
-        if (IsGrounded())
+        if (IsGrounded() || isMuddy)
         {
-            setGravity(playerData.gravityScale);
+            SetGravity(playerData.gravityScale);
             movementState = MovementState.Grounded;
         }
         if (touchingTree && dirY != 0 && lastStartGlideTime < 0)
         {
-            setGravity(0);
+            SetGravity(0);
             movementState = MovementState.Climbing;
         }
     }
@@ -355,7 +359,7 @@ public class PlayerMovement : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void setGravity(float gravity)
+    private void SetGravity(float gravity)
     {
         rb.gravityScale = gravity;
     }
@@ -368,11 +372,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Mud")
+        {
+            EnableMudEffect();
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Tree")
         {
             touchingTree = false;
+        }
+        if (other.gameObject.tag == "Mud")
+        {
+            DisableMudEffect();
         }
     }
 
@@ -394,6 +410,41 @@ public class PlayerMovement : MonoBehaviour
         playerData.verticalClimbSpeed -= speed * 0.5f;
         playerData.horizontalClimbSpeed -= speed * 0.5f;
         playerData.glideMaxSpeed -= speed;
+    }
+
+    private void EnableMudEffect()
+    {
+        rb.drag = playerData.mudDrag;
+        mudColorCoroutine = StartCoroutine(MudEffectColor());
+    }
+
+    private void DisableMudEffect()
+    {
+        rb.drag = 0;
+        StopCoroutine(mudColorCoroutine);
+        isMuddy = false;
+        spriteRenderer.color = Color.white;
+    }
+
+    private void LateUpdate()
+    {
+        if (isMuddy)
+        {
+            spriteRenderer.color = Color.Lerp(spriteRenderer.color, new Color(0.37f, 0.23f, 0.05f, 1), .5f);
+        }
+    }
+
+    private IEnumerator MudEffectColor()
+    {
+        float duration = 1f;
+        float t = 0;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(Color.white, new Color(0.37f, 0.23f, 0.05f, 1), t / duration);
+            yield return null;
+        }
+        isMuddy = true;
     }
 
 }

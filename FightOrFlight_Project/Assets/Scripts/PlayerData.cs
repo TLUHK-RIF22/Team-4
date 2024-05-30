@@ -61,6 +61,9 @@ public class PlayerData : ScriptableObject
 	[Range(0.01f, 1f)] public float noClimbingAfterGlideTime; //Grace period after gliding where you can't climb
 	[Range(0.01f, 1f)] public float climbAfterFallTime; //Grace period after falling off a tree where you automatically start climbing
 
+	[Header("Misc")]
+	[Range(0f, 100f)] public float mudDrag; //Player's drag when in mud
+
 
 
 	//Unity Callback, called when the inspector updates

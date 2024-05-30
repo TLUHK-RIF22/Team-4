@@ -47,4 +47,5 @@ MonoBehaviour:
   glideCoyoteTime: 0.5
   noClimbingAfterGlideTime: 0.5
   climbAfterFallTime: 0.25
+  mudDrag: 60
   _revert: 0
