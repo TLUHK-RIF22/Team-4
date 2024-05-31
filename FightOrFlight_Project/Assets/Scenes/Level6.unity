@@ -246,90 +246,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6616926645936033780, guid: 64127203a0fb70d4aa8f2b5516852e08, type: 3}
   m_PrefabInstance: {fileID: 83512820}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &127222136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 127222137}
-  - component: {fileID: 127222138}
-  m_Layer: 0
-  m_Name: StartHole
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &127222137
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127222136}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.0031258382, y: -0.0005478787, z: -0.17264144, w: 0.9849796}
-  m_LocalPosition: {x: -5.789, y: 1.881, z: 0.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 745256103}
-  m_LocalEulerAnglesHint: {x: 0.342, y: -0.124, z: -19.883}
---- !u!212 &127222138
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127222136}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1123458323
-  m_SortingLayer: 2
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 40f3db44eb3e3254ea9ce74379069521, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.83, y: 4.85}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &210365573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3308,7 +3224,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 750177990}
-  - {fileID: 127222137}
   - {fileID: 2051446302}
   - {fileID: 1275960029}
   - {fileID: 1026742105}
@@ -4095,11 +4010,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2734005823298154733, guid: 89d00f8b68c558b4b86b87b273b82967, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.93
+      value: -9.92
       objectReference: {fileID: 0}
     - target: {fileID: 2734005823298154733, guid: 89d00f8b68c558b4b86b87b273b82967, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.014
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 2734005823298154733, guid: 89d00f8b68c558b4b86b87b273b82967, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4580,7 +4495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2141655754775501227, guid: 1d4660a077be45545914280eec898a9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8777595
+      value: -1.73
       objectReference: {fileID: 0}
     - target: {fileID: 2141655754775501227, guid: 1d4660a077be45545914280eec898a9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6123,7 +6038,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 33680f076e7ec8d4aa2216a91a30f233, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
