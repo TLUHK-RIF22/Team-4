@@ -8565,7 +8565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520638489313332416, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
       propertyPath: m_Text
-      value: "Tase l\xE4bitud"
+      value: "Tase l\xE4bitud!"
       objectReference: {fileID: 0}
     - target: {fileID: 4520638489313332416, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
       propertyPath: m_Color.b
