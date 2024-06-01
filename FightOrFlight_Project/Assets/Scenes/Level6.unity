@@ -529,6 +529,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1026742105}
     m_Modifications:
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: attackSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: patrolSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: attackCooldownLength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 849335803461233745, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74752
@@ -539,11 +551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849335803461233745, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.235054
+      value: 100.89
       objectReference: {fileID: 0}
     - target: {fileID: 849335803461233745, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.419364
+      value: 9.05
       objectReference: {fileID: 0}
     - target: {fileID: 849335803461233745, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -712,6 +724,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1026742105}
     m_Modifications:
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: attackSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: attackCooldownLength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 849335803461233745, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60.515923
@@ -3333,7 +3353,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "J\xE4tka"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3397,7 +3417,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &926361383
@@ -5022,7 +5042,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Men\xFC\xFCsse"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5086,7 +5106,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1520947500
@@ -5640,6 +5660,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1026742105}
     m_Modifications:
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: attackSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 144809150568795052, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
+      propertyPath: attackCooldownLength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 849335803461233745, guid: 1d1111b489e140c49a17cd58604ea0ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.815918
@@ -6203,7 +6231,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lahku
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf68cb54a5d3e434281ae943151ef4c6, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6267,7 +6295,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1829556728
