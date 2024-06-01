@@ -4817,6 +4817,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505174404887451353, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7703944071427258789, guid: 4438a1c67d9a3b24095f8749d0f9c5d4, type: 3}
       propertyPath: m_Name
       value: LevelUICanvas
