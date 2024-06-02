@@ -73,3 +73,6 @@ TagManager:
   - name: Bush (In front)
     uniqueID: 4081400527
     locked: 0
+  - name: Overlay
+    uniqueID: 3737754845
+    locked: 0
