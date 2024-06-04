@@ -56,12 +56,20 @@ public class StarsHandler : MonoBehaviour
             star.SetActive(false);
         }
 
-        if (percentage <= 40)
+        Debug.Log("Coins collected: " + coinsCollected);
+        Debug.Log("Coins left: " + coinsLeft);
+        Debug.Log("Percentage: " + percentage);
+
+        if (percentage <= 30)
+        {
+            newStarsAquired = 0;
+        }
+        else if (percentage >= 31 && percentage < 60)
         {
             stars[0].SetActive(true);
             newStarsAquired = 1;
         }
-        else if (percentage >= 40 && percentage < 70)
+        else if (percentage >= 61 && percentage < 90)
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);

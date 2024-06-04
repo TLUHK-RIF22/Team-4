@@ -16,6 +16,7 @@ public class LevelCompleteScript : MonoBehaviour
         }
         if(starsAquired > PlayerPrefs.GetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), 0))
             PlayerPrefs.SetInt("stars" + LevelSelectionMenuManager.currLevel.ToString(), starsAquired);
+            Debug.Log("LCS starsAquired: " + starsAquired.ToString());
             Debug.Log("LCS if2 ");
         Debug.Log("LCS Current levelBe: " + LevelSelectionMenuManager.currLevel.ToString());    
         LevelSelectionMenuManager.currLevel++;    
