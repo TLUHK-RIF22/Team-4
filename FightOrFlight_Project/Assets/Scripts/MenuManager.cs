@@ -74,5 +74,11 @@ public class MenuManager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+
+    public void UnlockAllLevels()
+    {
+        PlayerPrefs.SetInt("UnlockedLevels", 10);
+        PlayerPrefs.Save();
+    }
 }
 
