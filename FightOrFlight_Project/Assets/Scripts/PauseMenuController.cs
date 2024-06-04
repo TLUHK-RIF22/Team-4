@@ -44,13 +44,14 @@ void Start()
     public void LoadMenu()
     {
         // Load your menu scene here
-        
+        Time.timeScale = 1f;
         Debug.Log("Loading menu...");
         SceneManager.LoadScene("MenuScene");
     }
 
 public void QuitGame()
     {
+        Time.timeScale = 1f;
         // Quit the application
         Application.Quit();
 
