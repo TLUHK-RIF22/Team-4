@@ -79,6 +79,14 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("UnlockedLevels", 10);
         PlayerPrefs.Save();
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("MenuScene");
     }
 }
 
