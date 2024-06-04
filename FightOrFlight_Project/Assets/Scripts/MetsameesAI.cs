@@ -297,6 +297,11 @@ public class MetsameesAI : MonoBehaviour
 
     private void Escape()
     {
+        if (axe != null)
+        {
+            Destroy(axe);
+        }
+        SetAnimationState(0);
         direction = Direction.Right;
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(50f, transform.position.y, transform.position.z), speed * 1.5f * Time.deltaTime);
         if (transform.position.x > 35f)

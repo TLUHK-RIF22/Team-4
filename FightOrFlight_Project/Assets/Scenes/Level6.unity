@@ -393,14 +393,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf
       objectReference: {fileID: 0}
-    - target: {fileID: 4751608605013215186, guid: fca517258da66b0448609c70aa2fa534, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4751608605013215186, guid: fca517258da66b0448609c70aa2fa534, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 48184025
-      objectReference: {fileID: 0}
     - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
       propertyPath: m_LocalPosition.x
       value: 99.716064
@@ -5064,18 +5056,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1275960029}
     m_Modifications:
     - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3662289
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.41776064
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.59341
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.509
       objectReference: {fileID: 0}
@@ -6257,14 +6237,6 @@ PrefabInstance:
       value: Leaf
       objectReference: {fileID: 0}
     - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.31706795
-      objectReference: {fileID: 0}
-    - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.31312054
-      objectReference: {fileID: 0}
-    - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.29
       objectReference: {fileID: 0}
@@ -6938,14 +6910,6 @@ PrefabInstance:
       value: Leaf
       objectReference: {fileID: 0}
     - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5705290094589432090, guid: fca517258da66b0448609c70aa2fa534, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.177753
       objectReference: {fileID: 0}
@@ -7003,14 +6967,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1275960029}
     m_Modifications:
-    - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.22216001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.22852002
-      objectReference: {fileID: 0}
     - target: {fileID: 1486729918363307303, guid: ee75e0d97dd21194482900f32885ea99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 74.81075

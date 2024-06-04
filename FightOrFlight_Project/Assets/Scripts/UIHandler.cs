@@ -44,6 +44,7 @@ public class UIHandler : MonoBehaviour
 
     public void BackToMain(int starsAcquired)            
     {
+        Time.timeScale = 1f;
         FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired);
         MenuState.ShowLevelSelect = true; // Set the state before loading
         SceneManager.LoadScene("MenuScene");
@@ -51,11 +52,13 @@ public class UIHandler : MonoBehaviour
 
     public void ReplayLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void NextLevel(int starsAcquired)
     {
+        Time.timeScale = 1f;
         FindObjectOfType<LevelCompleteScript>().OnLevelComplete(starsAcquired);
         Debug.Log("UIH Finished level: " + LevelSelectionMenuManager.levelNum.ToString());
         Debug.Log("UIH Current level: " + LevelSelectionMenuManager.currLevel.ToString());
