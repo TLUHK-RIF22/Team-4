@@ -23,7 +23,7 @@ public class LevelEnd : MonoBehaviour
         }
     }
 
-    void EndLevel()
+    public void EndLevel()
     {
         // Load the menu scene
         UIHandler.instance.ShowLevelDialog("Tase läbitud!", ScoreText.text);

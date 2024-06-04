@@ -52,6 +52,11 @@ public class PlayerManager : MonoBehaviour
         {
             HandleEnemyCollision(other.transform);
         }
+        if (other.gameObject.tag == "Axe")
+        {
+            healthManager.LoseHearts(1);
+        }
+
     }
 
     private void HandleEnemyCollision(Transform enemy)
