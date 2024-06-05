@@ -88,5 +88,14 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene("MenuScene");
     }
+
+    public void EnableCheatButtons()
+    {
+        GameObject[] cheatButtons = GameObject.FindGameObjectsWithTag("Secret");
+        foreach (GameObject button in cheatButtons)
+        {
+            button.transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
 }
 

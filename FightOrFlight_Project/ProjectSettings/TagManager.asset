@@ -16,6 +16,7 @@ TagManager:
   - Stump
   - Mud
   - Axe
+  - Secret
   layers:
   - Default
   - TransparentFX
