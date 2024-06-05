@@ -42,7 +42,7 @@ public class LevelEnd : MonoBehaviour
         endCreditsImage.GetComponent<Image>().color = new Color(1, 1, 1, 0);
         returnToMenuText.gameObject.SetActive(true);
         returnToMenuText.color = new Color(1, 1, 1, 0);
-        StartCoroutine(FadeInEndScreen(endCreditsImage, 4f, returnToMenuText, 1f));
+        StartCoroutine(FadeInEndScreen(endCreditsImage, 2.5f, returnToMenuText, 1f));
     }
 
     IEnumerator FadeInEndScreen(GameObject obj, float duration, TextMeshProUGUI textObj, float textDuration)
